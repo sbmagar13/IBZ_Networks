@@ -27,7 +27,7 @@ def sensor_form(request, id=0):
         if form.is_valid():
             form.save()
         return redirect('/list')
-
+#Comment
 
 def sensor_delete(request, id):
     sensor = DeviceStatus.objects.get(pk=id)
