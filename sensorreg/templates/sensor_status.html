@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Device ID</td>
+            <td>IP</td>
+            <td>Port</td>
+            <td>MAC Address</td>
+            <td>Administrative Area</td>
+            <td>Installation Route</td>
+            <td>Installation Location</td>
+            <td>GPS Coordinate</td>
+            <td>Interlock</td>
+            <td>Actions</td>
+            <td>
+                <a href="{% url 'sensor_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for device in sensor_list %}
+            <tr>
+                <td>{{ device.ID }}</td>
+                <td>{{ device.IP }}</td>
+                <td>{{ device.Port }}</td>
+                <td>{{ device.MacAddress }}</td>
+                <td>{{ device.AdministrativeRegion }}</td>
+                <td>{{ device.InstallationRoute }}</td>
+                <td>{{ device.InstallationLocation }}</td>
+                <td>{{ device.GPSCoordinates }}</td>
+                <td>{{ device.InterlockDeviceInformation}}</td>
+                <td>
+                    <a href="{% url 'sensor_update' device.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'sensor_delete' device.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
