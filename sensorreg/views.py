@@ -1,35 +1,61 @@
 from django.shortcuts import render, redirect
-from sensorreg.form import DeviceStatusForm
-from sensorreg.models import DeviceStatus
+from sensorreg.form import DeviceStatusForm, OperatorForm
+from sensorreg.models import DeviceStatus,Operator
 
 from django.views.generic import ListView
 
 
 def sensor_list(request):
     context = {'sensor_list': DeviceStatus.objects.all()}
-    return render(request, "sensor_status.html", context)
+    return render(request, "Environmental/sensor_status.html", context)
 
+def operator_list(request):
+    context = {'operator_list': Operator.objects.all()}
+    return render(request, "Operator/operatorhandset_status.html", context)
 
-def sensor_form(request, id=0):
+def sensor_form(request, sid=0):
     if request.method == "GET":
-        if id == 0:
+        if sid == 0:
             form = DeviceStatusForm()
         else:
-            sensor = DeviceStatus.objects.get(pk=id)
+            sensor = DeviceStatus.objects.get(pk=sid)
             form = DeviceStatusForm(instance=sensor)
-        return render(request, "sensor_register.html", {'form': form})
+        return render(request, "Environmental/sensor_register.html", {'form': form})
     else:
-        if id == 0:
+        if sid == 0:
             form = DeviceStatusForm(request.POST)
         else:
-            sensor = DeviceStatus.objects.get(pk=id)
+            sensor = DeviceStatus.objects.get(pk=sid)
             form = DeviceStatusForm(request.POST, instance=sensor)
         if form.is_valid():
             form.save()
-        return redirect('/list')
+        return redirect('/envlist')
+
+def operator_form(request, oid=0):
+    if request.method == "GET":
+        if oid == 0:
+            form = OperatorForm()
+        else:
+            sensor = Operator.objects.get(pk=oid)
+            form = OperatorForm(instance=sensor)
+        return render(request, "Operator/operator_register.html", {'form': form})
+    else:
+        if oid == 0:
+            form = OperatorForm(request.POST)
+        else:
+            sensor =Operator.objects.get(pk=oid)
+            form = OperatorForm(request.POST, instance=sensor)
+        if form.is_valid():
+            form.save()
+        return redirect('/oplist')
 #Comment
 
-def sensor_delete(request, id):
-    sensor = DeviceStatus.objects.get(pk=id)
+def sensor_delete(request, sid):
+    sensor = DeviceStatus.objects.get(pk=sid)
     sensor.delete()
-    return redirect('/list')
+    return redirect('/envlist')
+
+def operator_delete(request, oid):
+    sensor = Operator.objects.get(pk=oid)
+    sensor.delete()
+    return redirect('/oplist')

@@ -76,14 +76,25 @@ WSGI_APPLICATION = 'IBZ.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'IBZ',
+#         'USER': 'postgres',
+#         'PASSWORD': '123456',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'IBZ',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ibz_db',
+        'USER': 'root',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
 
