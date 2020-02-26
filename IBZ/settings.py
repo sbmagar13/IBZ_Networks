@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'IBZ.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ibz_db',
+        'NAME': 'ibz',
         'USER': 'root',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
