@@ -1,5 +1,5 @@
 from django import forms
-from sensorreg.models import DeviceStatus,Operator
+from sensorreg.models import DeviceStatus,Operator, InterlockDevice
 
 
 class DeviceStatusForm(forms.ModelForm):
@@ -8,6 +8,10 @@ class DeviceStatusForm(forms.ModelForm):
         fields = ['DeviceID', 'IP', 'Port', "MacAddress", "AdministrativeRegion", "InstallationRoute", "InstallationLocation",
                   "GPSCoordinates", "InterlockDeviceInformation"]
 
+
+class InterlockDeviceForm(forms.ModelForm):
+    class Meta:
+        model =
 class OperatorForm(forms.ModelForm):
     class Meta:
         model = Operator

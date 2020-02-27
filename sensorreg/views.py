@@ -5,6 +5,15 @@ from sensorreg.models import DeviceStatus,Operator
 from django.views.generic import ListView
 
 
+
+# def env_list(request):
+#     form=DeviceStatusForm(request.POST or None)
+#     if form.is_valid():
+#         form.save()
+#         form = DeviceStatusForm()
+#     context = {'form': form}
+#     return render(request, "show.html", context)
+
 def sensor_list(request):
     context = {'sensor_list': DeviceStatus.objects.all()}
     return render(request, "Environmental/sensor_status.html", context)
@@ -29,6 +38,8 @@ def sensor_form(request, sid=0):
             form = DeviceStatusForm(request.POST, instance=sensor)
         if form.is_valid():
             form.save()
+        else:
+            return render(request, "Environmental/sensor_register.html", {'form': form})
         return redirect('/envlist')
 
 def operator_form(request, oid=0):
@@ -47,6 +58,8 @@ def operator_form(request, oid=0):
             form = OperatorForm(request.POST, instance=sensor)
         if form.is_valid():
             form.save()
+        else:
+            return render(request, "Operator/operator_register.html", {'form': form})
         return redirect('/oplist')
 #Comment
 

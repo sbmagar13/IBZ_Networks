@@ -2,7 +2,7 @@ from django.urls import path
 from sensorreg import views
 
 urlpatterns = [
-
+    #path('show/', views.env_list, name='env_list'),
     path('sensor/', views.sensor_form, name='sensor_insert'),  # get and post req. for insert operation
     path('envupdate/<int:sid>/', views.sensor_form, name='sensor_update'),  # get and post req. for update operation
     path('envdelete/<int:sid>/', views.sensor_delete, name='sensor_delete'),
