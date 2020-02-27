@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<form method="POST" action="."> {%csrf_token %}
+    {{ form.as_p }}
+   <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Submit</button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'interlock_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Back to list
+            </a>
+        </div>
+    </div>
+{% endblock content %}

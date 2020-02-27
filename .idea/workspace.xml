@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f100023-db6d-43a9-ba76-b9e0ae37b663" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sensorreg/templates/Show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sensorreg/migrations/0002_auto_20200227_1025.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sensorreg/templates/Interlock/interlock_status.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sensorreg/templates/Interlock/interlockinformation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensorreg/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensorreg/form.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensorreg/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensorreg/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensorreg/templates/Environmental/sensor_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensorreg/templates/Environmental/sensor_status.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensorreg/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensorreg/urls.py" afterDir="false" />

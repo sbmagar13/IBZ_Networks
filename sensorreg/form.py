@@ -11,7 +11,8 @@ class DeviceStatusForm(forms.ModelForm):
 
 class InterlockDeviceForm(forms.ModelForm):
     class Meta:
-        model =
+        model = InterlockDevice
+        fields = ['Device_ID', 'IP', 'Port', 'Device_Type', 'Remarks']
 class OperatorForm(forms.ModelForm):
     class Meta:
         model = Operator
