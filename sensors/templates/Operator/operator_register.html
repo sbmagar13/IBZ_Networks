@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h4 class="col-md-offset-6">Operator Handset Device Registration</h4>
+    <hr class="my-3">
+</div>
+<form action="" method="POST" autocomplete="off">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="row">
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Submit</button>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'operator_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i>Back to list
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i>Close
+            </a>
+        </div>
+    </div>
+
+</form>
+{% endblock content %}
+

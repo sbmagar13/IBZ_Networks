@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ <div class="row">
+        <div class="col-md-2">
+            <a href="{% url 'sensor_insert' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Sensor Register
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'operator_insert' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Portable Device Register
+            </a>
+        </div>
+
+        <div class="col-md-2">
+            <a href="{% url 'interlock_insert' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Interlocked Device Register
+            </a>
+        </div>
+
+        <div class="col-md-2">
+            <a href="{% url 'display_settings' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Screen settings
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'history_settings' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> History settings
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Logo
+            </a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Environmental Sensor Data
+            </a>
+            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> History
+            </a>
+            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Location
+            </a>
+        </div>
+        <div class="col-md-4">
+            <p>Main Window</p>
+        </div>
+        
+    </div>
+    
+
+
+
+ {% endblock content %}

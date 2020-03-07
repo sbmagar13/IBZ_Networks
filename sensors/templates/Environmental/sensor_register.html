@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div>
+    <h4 class="col-md-offset-6">Environmental Sensor Device Registration</h4>
+    <hr class="my-3">
+</div>
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.DeviceID|as_crispy_field}}
+    {{form.IP|as_crispy_field}}
+    {{form.Port|as_crispy_field}}
+    {{form.MacAddress|as_crispy_field}}
+    {{form.AdministrativeRegion|as_crispy_field}}
+    {{form.InstallationRoute|as_crispy_field}}
+    {{form.InstallationLocation|as_crispy_field}}
+    {{form.GPSCoordinates|as_crispy_field}}
+    {{form.InterlockDeviceInformation|as_crispy_field}}
+    <div class="row">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Submit</button>
+        </div>
+        <div class="col-md-offset-8">
+            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i>Close
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'sensor_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i>Back to list
+            </a>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Approver Window</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="" method="post" autocomplete="off">
+                {% csrf_token %}
+                {{ form2.as_p }}
+                <div class = "col-md-4">
+                    <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>Submit</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+{% endblock content %}
+

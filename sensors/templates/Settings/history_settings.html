@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+<!-- {% load crispy_forms_tags %} -->
+{% block content %}
+    <form action="" method="post" autocomplete="off">
+        {% csrf_token %}
+        <div class="row">
+            {{form.as_p}}
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-success btn-block btn-sm">
+                        Save</button>
+                </div>
+                <div class="col-md-6">
+                    <a href="{% url '' %}" class="btn btn-secondary btn-block btn-sm">Cancel
+                    </a>
+                </div>
+            </div>
+    </form>
+
+{% endblock content %}

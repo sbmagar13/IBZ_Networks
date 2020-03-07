@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h4 class="col-md-offset-6">Enviromental Sensor Status</h4>
+    <hr class="my-3">
+</div>
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Device ID</td>
+            <td>IP</td>
+            <td>Port</td>
+            <td>MAC Address</td>
+            <td>Administrative Area</td>
+            <td>Installation Route</td>
+            <td>Installation Location</td>
+            <td>GPS Coordinate</td>
+            <td>Interlock</td>
+            <td>Actions</td>
+            <td>
+                <a href="{% url 'sensor_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i>Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for device in sensor_list %}
+            <tr>
+                <td>{{ device.DeviceID }}</td>
+                <td>{{ device.IP }}</td>
+                <td>{{ device.Port }}</td>
+                <td>{{ device.MacAddress }}</td>
+                <td>{{ device.AdministrativeRegion }}</td>
+                <td>{{ device.InstallationRoute }}</td>
+                <td>{{ device.InstallationLocation }}</td>
+                <td>{{ device.GPSCoordinates }}</td>
+                <td>{{ device.InterlockDeviceInformation}}</td>
+                <td>
+                    <a href="{% url 'sensor_update' device.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg">Edit</i>
+                    </a>
+                    <a href="/envdelete/<int:sid>/" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Delete</a>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Approver Window</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body modal-content">
+                                    <form action="{% url 'sensor_delete' device.id %}" method="post" autocomplete="off">
+                                        {% csrf_token %}
+                                        {{ form2.as_p }}
+                                        <div class = "col-md-4">
+                                            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="col-md-2">
+    <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
+        <i class="fas fa-stream"></i>Close
+    </a>
+</div>
+{% endblock content %}
