@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+
 {% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
+<title>Environmental Sensor Device Registration</title>
 <div>
     <h4 class="col-md-offset-6">Environmental Sensor Device Registration</h4>
     <hr class="my-3">

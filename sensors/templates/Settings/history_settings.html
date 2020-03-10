@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 <!-- {% load crispy_forms_tags %} -->
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+<title>History Settings</title>
+<div>
+    <h4 class="col-md-offset-6">History Settings</h4>
+    <hr class="my-3">
+</div>
 {% block content %}
     <form action="" method="post" autocomplete="off">
         {% csrf_token %}

@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<title>IBZ Networks</title>
+<div>
+    <h1 class="display-8">IBZ Networks</h1>
+    <hr class="my-3">
+</div>
  <div class="row">
         <div class="col-md-2">
             <a href="{% url 'sensor_insert' %}" class="btn btn-secondary btn-block btn-lg">
@@ -36,15 +40,17 @@
             </a>
         </div>
     </div>
-    
+    <br>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas fa-stream"></i> Environmental Sensor Data
             </a>
+            <br>
             <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas fa-stream"></i> History
             </a>
+            <br>
             <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas fa-stream"></i> Location
             </a>

@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect
 from sensors.forms import DeviceStatusForm, OperatorForm, InterlockDeviceForm, ApproverForm, \
     SettingsWindowForm, HistorySettingsForm  # , PopupForm
 from sensors.models import DeviceStatus, Operator, InterlockDevice
-from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
 
@@ -49,10 +48,18 @@ def sensor_form(request, sid=0):
                     form = DeviceStatusForm(request.POST, instance=sensor)
                 if form.is_valid():
                     form.save()
+                    messages.add_message(request, messages.SUCCESS, 'Registered Sucessfully!!')
                 else:
                     return render(request, "Environmental/sensor_register.html", {'form': form, 'form2': form2})
                 return redirect('/envlist')
-            return redirect('/sensor')
+            elif sid != 0:
+                sensor = DeviceStatus.objects.get(pk=sid)
+                form = DeviceStatusForm(request.POST, instance=sensor)
+                messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!!')
+                return render(request, "Environmental/sensor_register.html", {'form': form, 'form2': form2})
+            else:
+                messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!!')
+                return redirect('/sensor')
 
 
 def interlockdevice_form(request, eid=0):

@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+<title>Environmental Sensor Devices Status</title>
 <div>
-    <h4 class="col-md-offset-6">Enviromental Sensor Status</h4>
+    <h4 class="col-md-offset-6">Enviromental Sensor Devices Status</h4>
     <hr class="my-3">
 </div>
 <table class="table table-borderless">

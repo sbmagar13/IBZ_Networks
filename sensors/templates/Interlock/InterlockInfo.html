@@ -1,5 +1,11 @@
 {% extends "base.html" %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    {% endfor %}
+{% endif %}
 {% block content %}
+<title>Interlocked Device Enrollment</title>
 <div>
     <h4 class="col-md-offset-6">Interlocked Device Enrollment</h4>
     <hr class="my-3">
