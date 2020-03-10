@@ -33,31 +33,28 @@
                     <a href="{% url 'interlock_update' device.id %}" class="btn text-secondary px-0">
                         <i class="far fa-edit fa-lg">Edit</i>
                     </a>
-                    <form action="{% url 'interlock_delete' device.id %}" method="post" class="d-inline">
-                        {% csrf_token %}
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Delete</button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby   ="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Approver Window</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="   Close">
-                                            <span aria-hidden="true">&times;</span>
-                                         </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="" method="post" autocomplete="off">
-                                            {% csrf_token %}
-                                            {{ form2.as_p }}
-                                            <div class = "col-md-4">
-                                                <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>Submit</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                    <button href="{% url 'interlock_delete' device.id %}" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#in{{ device.id }}" data-whatever="@fat">Delete</button>
+                    <div class="modal fade" id="in{{ device.id }}" tabindex="-1" role="dialog" aria-labelledby   ="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Approver Window</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="   Close">
+                                        <span aria-hidden="true">&times;</span>
+                                     </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="" method="post" autocomplete="off">
+                                        {% csrf_token %}
+                                        {{ form2.as_p }}
+                                        <div class = "col-md-4">
+                                            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>Submit</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </td>
             </tr>
         {% endfor %}

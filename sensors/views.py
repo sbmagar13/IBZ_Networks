@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from sensors.forms import DeviceStatusForm, OperatorForm, InterlockDeviceForm, ApproverForm, \
     SettingsWindowForm, HistorySettingsForm  # , PopupForm
 from sensors.models import DeviceStatus, Operator, InterlockDevice
-
+from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
 
@@ -115,31 +115,34 @@ def sensor_delete(request, sid):
         if (approverkey in fapprover_values) or (approverkey == 'ibz123'):
             sensor.delete()
             return redirect('/envlist')
+        return redirect('/oplist')
     return redirect('/envlist')
 
 
 def interlockdevice_delete(request, eid):
     interlockdevice = InterlockDevice.objects.get(pk=eid)
-    form2 = ApproverForm(request.POST)
-    if form2.is_valid():
-        approverkey = form2.cleaned_data.get("approver_key")
+    form = ApproverForm(request.POST)
+    if form.is_valid():
+        approverkey = form.cleaned_data.get("approver_key")
         fapprover_values = Operator.objects.values_list('FinalApprover', flat=True)
         if (approverkey in fapprover_values) or (approverkey == 'ibz123'):
             interlockdevice.delete()
             return redirect('/interlocklist')
         return redirect('/interlocklist')
+    return redirect('/oplist')
 
 
 def operator_delete(request, oid):
     sensor = Operator.objects.get(pk=oid)
-    form2 = ApproverForm(request.POST)
-    if form2.is_valid():
-        approverkey = form2.cleaned_data.get("approver_key")
+    form = ApproverForm(request.POST)
+    if form.is_valid():
+        approverkey = form.cleaned_data.get("approver_key")
         fapprover_values = Operator.objects.values_list('FinalApprover', flat=True)
         if (approverkey in fapprover_values) or (approverkey == 'ibz123'):
             sensor.delete()
             return redirect('/oplist')
         return redirect('/oplist')
+    return redirect('/oplist')
 
 
 def settings_window(request):
