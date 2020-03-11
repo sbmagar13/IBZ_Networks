@@ -1,6 +1,7 @@
 from django.urls import path
 from sensors import views
 
+
 urlpatterns = [
     path('', views.index, name=''),
 
@@ -19,8 +20,10 @@ urlpatterns = [
     path('opdelete/<int:oid>/', views.operator_delete, name='operator_delete'),
     path('oplist/', views.operator_list, name='operator_list'),  # get req. to retrieve and display all records
 
-    path('displaySettings', views.settings_window, name='display_settings'),
-    path('historySettings', views.history_settings, name='history_settings'),
+    path('displaySettings/', views.settings_window, name='display_settings'),
+    path('historySettings/', views.history_settings, name='history_settings'),
+
+    path('sensordata/', views.sensor_data, name='sensor_data'),
 
     path('search/', views.search_view, name='search_results'),
 ]

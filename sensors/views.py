@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from sensors.forms import DeviceStatusForm, OperatorForm, InterlockDeviceForm, ApproverForm, \
     SettingsWindowForm, HistorySettingsForm  # , PopupForm
-from sensors.models import DeviceStatus, Operator, InterlockDevice
+from sensors.models import DeviceStatus, Operator, InterlockDevice, SensorData
 from django.contrib import messages
 from django.db.models import Q
 
@@ -105,26 +105,31 @@ def interlockdevice_form(request, eid=0):
 
 
 def operator_form(request, oid=0):
+    form2 = ApproverForm()
     if request.method == "GET":
         if oid == 0:
             form = OperatorForm()
         else:
             operator1 = Operator.objects.get(pk=oid)
             form = OperatorForm(instance=operator1)
-        return render(request, "Operator/operator_register.html", {'form': form})
+        return render(request, "Operator/operator_register.html", {'form': form, 'form2': form2})
     else:
-        if oid == 0:
-            form = OperatorForm(request.POST)
-        else:
-            operator1 = Operator.objects.get(pk=oid)
-            form = OperatorForm(request.POST, instance=operator1)
-        if form.is_valid():
-            form.save()
-            messages.add_message(request, messages.SUCCESS, 'Saved Successfully!!')
-        else:
-            messages.add_message(request, messages.SUCCESS, 'Invalid Input Format!!')
-            return render(request, "Operator/operator_register.html", {'form': form})
-        return redirect('/oplist')
+        form2 = ApproverForm(request.POST)
+        if form2.is_valid():
+            approverkey = form2.cleaned_data.get("approver_key")
+            if approverkey == 'ibz123':
+                if oid == 0:
+                    form = OperatorForm(request.POST)
+                else:
+                    operator1 = Operator.objects.get(pk=oid)
+                    form = OperatorForm(request.POST, instance=operator1)
+                if form.is_valid():
+                    form.save()
+                    messages.add_message(request, messages.SUCCESS, 'Saved Successfully!!')
+                else:
+                    messages.add_message(request, messages.SUCCESS, 'Invalid Input Format!!')
+                    return render(request, "Operator/operator_register.html", {'form': form, 'form2': form2})
+                return redirect('/oplist')
 
 
 def sensor_delete(request, sid):
@@ -186,6 +191,11 @@ def history_settings(request):
     return render(request, 'Settings/history_settings.html', {'form': form})
 
 
+def sensor_data(request):
+    context = {'sensor_data': SensorData.objects.all()}
+    return render(request, "sensor_data.html", context)
+
+
 def search_view(request):
     if request.method == 'POST':
         srch = request.POST['srh']
@@ -202,3 +212,6 @@ def search_view(request):
             messages.add_message(request, messages.SUCCESS, 'not valid input')
             return redirect('/envlist')
     return redirect('/envlist')
+
+
+

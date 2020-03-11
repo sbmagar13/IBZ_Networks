@@ -5,7 +5,6 @@ from django.db import models
 from .validators import validate_MAC
 from multiselectfield import MultiSelectField
 from phone_field import PhoneField
-# from phonenumber_field.modelfields import PhoneNumberField
 
 
 class DeviceStatus(models.Model):
@@ -22,7 +21,10 @@ class DeviceStatus(models.Model):
     #                                   default='10.141932, 10.371094')
     Long = models.DecimalField(max_digits=8, decimal_places=3, null=True)
     Lat = models.DecimalField(max_digits=8, decimal_places=3, null=True)
-    InterlockDeviceInformation = models.CharField(max_length=100, default="None")
+    InterlockDeviceID1 = models.CharField(max_length=100, default="None")
+    InterlockDeviceID2 = models.CharField(max_length=100, default="None")
+    InterlockDeviceID3 = models.CharField(max_length=100, default="None")
+    InterlockDeviceID4 = models.CharField(max_length=100, default="None")
 
     def save(self, *args, **kwargs):
         self.DeviceID
@@ -119,6 +121,28 @@ class HistorySettings(models.Model):
     Save = models.CharField(max_length=100, choices=[('6_months', '6_months'), ('1_year', '1_year')])
     Delete = models.CharField(max_length=100, choices=[('6_months', '6_months'), ('1_year', '1_year')])
     Cycle_time = models.CharField(max_length=100, choices=[('6_months', '6_months'), ('1_year', '1_year')])
+
+
+class SensorData(models.Model):
+    Did = models.IntegerField()
+    MAC_Address = models.CharField(max_length=8)
+    Date = models.DateField()
+    Time = models.TimeField()
+    WeekDay = models.IntegerField()
+    Air_Temperature = models.FloatField()
+    Humidity = models.FloatField()
+    Air_Pressure = models.FloatField()
+    Accumulated_PPT = models.FloatField()
+    Dust_Concentration = models.FloatField()
+    Radiation_Illuminance = models.FloatField()
+    Solar_Radiation = models.FloatField()
+    RoadSurface_Temperature = models.FloatField()
+    Noise_Level = models.IntegerField()
+    Accelerometer_Xout = models.FloatField()
+    Accelerometer_Yout = models.FloatField()
+    Accelerometer_Zout = models.FloatField()
+    GPS_Location_N = models.FloatField()
+    GPS_Location_E = models.FloatField()
 
 
 # classoperator(models.Model):

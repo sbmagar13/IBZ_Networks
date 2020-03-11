@@ -38,7 +38,7 @@
                     <a href="{% url 'interlock_update' device.id %}" class="btn text-secondary px-0">
                         <i class="far fa-edit fa-lg">Edit</i>
                     </a>
-                    <button href="{% url 'interlock_delete' device.id %}" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#in{{ device.id }}" data-whatever="@fat">Delete</button>
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#in{{ device.id }}" data-whatever="@fat">Delete</button>
                     <div class="modal fade" id="in{{ device.id }}" tabindex="-1" role="dialog" aria-labelledby   ="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
@@ -49,7 +49,7 @@
                                      </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="" method="post" autocomplete="off">
+                                    <form action="{% url 'interlock_delete' device.id %}" method="post" autocomplete="off">
                                         {% csrf_token %}
                                         {{ form2.as_p }}
                                         <div class = "col-md-4">

@@ -35,7 +35,10 @@
             <td>Installation Route</td>
             <td>Installation Location</td>
             <td>GPS Coordinates</td>
-            <td>Interlock</td>
+            <td>Interlock DeviceID1</td>
+            <td>Interlock DeviceID2</td>
+            <td>Interlock DeviceID3</td>
+            <td>Interlock DeviceID4</td>
             <td>Actions</td>
             <td>
                 <a href="{% url 'sensor_insert' %}" class="btn btn-outline-success">
@@ -55,7 +58,10 @@
                 <td>{{ device.InstallationRoute }}</td>
                 <td>{{ device.InstallationLocation }}</td>
                 <td>{{ device.Long }}E, {{ device.Lat}}N</td>
-                <td>{{ device.InterlockDeviceInformation}}</td>
+                <td>{{ device.InterlockDeviceID1}}</td>
+                <td>{{ device.InterlockDeviceID2}}</td>
+                <td>{{ device.InterlockDeviceID3}}</td>
+                <td>{{ device.InterlockDeviceID4}}</td>
                 <td>
                     <a href="{% url 'sensor_update' device.id %}" class="btn text-secondary px-0">
                         <i class="far fa-edit fa-lg">Edit</i>
