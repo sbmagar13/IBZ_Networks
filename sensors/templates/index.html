@@ -4,7 +4,7 @@
 <title>IBZ Networks</title>
 <div>
     <h1 class="display-8">IBZ Networks</h1>
-    <hr class="my-3">
+    <hr class="my-1">
 </div>
 <br>
  <div class="row">
@@ -35,7 +35,7 @@
                 <i class="fas fa-stream"></i> History settings
             </a>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
             <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas fa-stream"></i> Logo
             </a>
@@ -43,20 +43,24 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <a href="{% url 'sensor_data' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas fa-stream"></i> Environmental Sensor Data
             </a>
+            <br>
+            <br>
             <br>
             <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas fa-stream"></i> History
             </a>
             <br>
-            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
+            <br>
+            <br>
+            <a href="{% url 'map' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas fa-stream"></i> Location
             </a>
         </div>
-        <div class="col-sm-2">
+        <div class="col-md-6">
             {% block body %}
             {% endblock body %}
         </div>

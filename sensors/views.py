@@ -144,7 +144,7 @@ def sensor_delete(request, sid):
             return redirect('/envlist')
         else:
             messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!!')
-            return redirect('/oplist')
+            return redirect('/envlist')
     else:
         messages.add_message(request, messages.SUCCESS, 'Invalid Input Format!!')
         return redirect('/envlist')
@@ -165,7 +165,7 @@ def interlockdevice_delete(request, eid):
             return redirect('/interlocklist')
     else:
         messages.add_message(request, messages.SUCCESS, 'Invalid Input Format!!')
-        return redirect('/oplist')
+        return redirect('/interlocklist')
 
 
 def operator_delete(request, oid):
@@ -176,9 +176,14 @@ def operator_delete(request, oid):
         fapprover_values = Operator.objects.values_list('FinalApprover', flat=True)
         if (approverkey in fapprover_values) or (approverkey == 'ibz123'):
             sensor.delete()
+            messages.add_message(request, messages.SUCCESS, 'Deleted Successfully!!')
             return redirect('/oplist')
+        else:
+            messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!!')
+            return redirect('/oplist')
+    else:
+        messages.add_message(request, messages.SUCCESS, 'Invalid Input Format!!')
         return redirect('/oplist')
-    return redirect('/oplist')
 
 
 def settings_window(request):
@@ -196,22 +201,65 @@ def sensor_data(request):
     return render(request, "sensor_data.html", context)
 
 
-def search_view(request):
-    if request.method == 'POST':
-        srch = request.POST['srh']
+def sensorsearch_view(request):
+    form2 = ApproverForm()
+    if request.method == 'GET':
+        srch = request.GET.get('srh')
         if srch:
             match = DeviceStatus.objects.filter(
                 Q(DeviceID__iexact=srch) | Q(AdministrativeRegion__iexact=srch) | Q(
                     InstallationRoute__iexact=srch) | Q(InstallationLocation__iexact=srch))
             if match:
                 messages.add_message(request, messages.SUCCESS, 'found some results!')
-                return render(request, 'Environmental/sensor_status.html', {'match': match})
+                return render(request, 'Environmental/sensor_search.html', {'match': match, 'form2': form2})
             else:
                 messages.add_message(request, messages.SUCCESS, 'no result found!')
         else:
-            messages.add_message(request, messages.SUCCESS, 'not valid input')
+            messages.add_message(request, messages.SUCCESS, 'not valid input!')
             return redirect('/envlist')
     return redirect('/envlist')
 
+
+def operatorsearch_view(request):
+    form2 = ApproverForm()
+    if request.method == 'GET':
+        srch = request.GET.get('srh')
+        if srch:
+            match = Operator.objects.filter(
+                Q(PhoneNo__iexact=srch) | Q(ManagerName__icontains=srch) | Q(
+                    Department__iexact=srch))
+            if match:
+                messages.add_message(request, messages.SUCCESS, 'found some results!')
+                return render(request, 'Operator/operator_search.html', {'match': match, 'form2': form2})
+            else:
+                messages.add_message(request, messages.SUCCESS, 'no result found!')
+        else:
+            messages.add_message(request, messages.SUCCESS, 'not valid input!')
+            return redirect('/oplist')
+    return redirect('/oplist')
+
+
+def interlocksearch_view(request):
+    form2 = ApproverForm()
+    if request.method == 'GET':
+        srch = request.GET.get('srh')
+        if srch:
+            match = InterlockDevice.objects.filter(
+                Q(Device_ID__iexact=srch) | Q(Device_Type__icontains=srch))
+            if match:
+                messages.add_message(request, messages.SUCCESS, 'found some results!')
+                return render(request, 'Interlock/interlock_search.html', {'match': match, 'form2': form2})
+            else:
+                messages.add_message(request, messages.SUCCESS, 'no result found!')
+        else:
+            messages.add_message(request, messages.SUCCESS, 'not valid input!')
+            return redirect('/interlocklist')
+    return redirect('/interlocklist')
+
+
+def map(request):
+    mapbox_access_token = 'pk.my_mapbox_access_token'
+    return render(request, 'map.html',
+                  {'mapbox_access_token': mapbox_access_token})
 
 

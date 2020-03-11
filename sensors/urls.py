@@ -25,5 +25,9 @@ urlpatterns = [
 
     path('sensordata/', views.sensor_data, name='sensor_data'),
 
-    path('search/', views.search_view, name='search_results'),
+    path('sensor/search/', views.sensorsearch_view, name='sensor_search'),
+    path('operator/search/', views.operatorsearch_view, name='operator_search'),
+    path('interlock/search', views.interlocksearch_view, name='interlock_search'),
+
+    path('map/', views.map, name='map'),
 ]
