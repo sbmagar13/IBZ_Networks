@@ -4,8 +4,7 @@
     <list default="true" id="3f100023-db6d-43a9-ba76-b9e0ae37b663" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/sensors/templates/sensor_data.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensors/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensors/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensors/templates/Environmental/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Environmental/search_results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_register.html" afterDir="false" />
@@ -85,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sensors/templates/sensor_data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="-119">
+              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -197,7 +196,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="645" />
     <option name="width" value="728" />
     <option name="height" value="775" />
@@ -353,18 +352,17 @@
       <workItem from="1583810661987" duration="12194000" />
       <workItem from="1583826188660" duration="11501000" />
       <workItem from="1583858817754" duration="9034000" />
-      <workItem from="1583896403842" duration="7195000" />
+      <workItem from="1583896403842" duration="8000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93002000" />
+    <option name="totallyTimeSpent" value="93807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14069591" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14069591" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -378,7 +376,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29493088" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29493088" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -650,8 +648,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sensors/templates/sensor_data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="-119">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
