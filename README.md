@@ -1,5 +1,6 @@
 # IBZ_Networks
 CRUD Operations (Black-ICE Detection System)
+setup machine with own virtual environment and activate first.
 
 # Python 3.7
 
