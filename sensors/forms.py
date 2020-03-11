@@ -7,8 +7,7 @@ from sensors.models import DeviceStatus, Operator, InterlockDevice, SettingsWind
 class DeviceStatusForm(forms.ModelForm):
     class Meta:
         model = DeviceStatus
-        fields = ['DeviceID', 'IP', 'Port', "MacAddress", "AdministrativeRegion", "InstallationRoute",
-                  "InstallationLocation", "GPSCoordinates", "InterlockDeviceInformation"]
+        fields = '__all__'
 
 
 class InterlockDeviceForm(forms.ModelForm):

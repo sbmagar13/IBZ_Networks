@@ -4,6 +4,7 @@ from sensors.forms import DeviceStatusForm, OperatorForm, InterlockDeviceForm, A
     SettingsWindowForm, HistorySettingsForm  # , PopupForm
 from sensors.models import DeviceStatus, Operator, InterlockDevice
 from django.contrib import messages
+from django.db.models import Q
 
 
 def index(request):
@@ -48,8 +49,9 @@ def sensor_form(request, sid=0):
                     form = DeviceStatusForm(request.POST, instance=sensor)
                 if form.is_valid():
                     form.save()
-                    messages.add_message(request, messages.SUCCESS, 'Registered Sucessfully!!')
+                    messages.add_message(request, messages.SUCCESS, 'Saved Sucessfully!!')
                 else:
+                    messages.add_message(request, messages.SUCCESS, 'Invalid Input!!')
                     return render(request, "Environmental/sensor_register.html", {'form': form, 'form2': form2})
                 return redirect('/envlist')
             elif sid != 0:
@@ -60,6 +62,9 @@ def sensor_form(request, sid=0):
             else:
                 messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!!')
                 return redirect('/sensor')
+        else:
+            messages.add_message(request, messages.SUCCESS, 'Invalid Input!!')
+            return redirect('/sensor')
 
 
 def interlockdevice_form(request, eid=0):
@@ -86,9 +91,16 @@ def interlockdevice_form(request, eid=0):
                     form = InterlockDeviceForm(request.POST, instance=interlockdevice)
                 if form.is_valid():
                     form.save()
+                    messages.add_message(request, messages.SUCCESS, 'Saved Succesfully!!')
                 else:
+                    messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!!')
                     return render(request, "Interlock/InterlockInfo.html", {'form': form, 'form2': form2})
                 return redirect('/interlocklist')
+            else:
+                messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!!')
+                return HttpResponseRedirect('/interlock')
+        else:
+            messages.add_message(request, messages.SUCCESS, 'Invalid Input!!')
             return HttpResponseRedirect('/interlock')
 
 
@@ -108,7 +120,9 @@ def operator_form(request, oid=0):
             form = OperatorForm(request.POST, instance=operator1)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Saved Successfully!!')
         else:
+            messages.add_message(request, messages.SUCCESS, 'Invalid Input Format!!')
             return render(request, "Operator/operator_register.html", {'form': form})
         return redirect('/oplist')
 
@@ -121,9 +135,14 @@ def sensor_delete(request, sid):
         fapprover_values = Operator.objects.values_list('FinalApprover', flat=True)
         if (approverkey in fapprover_values) or (approverkey == 'ibz123'):
             sensor.delete()
+            messages.add_message(request, messages.SUCCESS, 'Deleted Successfully!!')
             return redirect('/envlist')
-        return redirect('/oplist')
-    return redirect('/envlist')
+        else:
+            messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!!')
+            return redirect('/oplist')
+    else:
+        messages.add_message(request, messages.SUCCESS, 'Invalid Input Format!!')
+        return redirect('/envlist')
 
 
 def interlockdevice_delete(request, eid):
@@ -134,9 +153,14 @@ def interlockdevice_delete(request, eid):
         fapprover_values = Operator.objects.values_list('FinalApprover', flat=True)
         if (approverkey in fapprover_values) or (approverkey == 'ibz123'):
             interlockdevice.delete()
+            messages.add_message(request, messages.SUCCESS, 'Deleted Successfully!!')
             return redirect('/interlocklist')
-        return redirect('/interlocklist')
-    return redirect('/oplist')
+        else:
+            messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!!')
+            return redirect('/interlocklist')
+    else:
+        messages.add_message(request, messages.SUCCESS, 'Invalid Input Format!!')
+        return redirect('/oplist')
 
 
 def operator_delete(request, oid):
@@ -160,3 +184,21 @@ def settings_window(request):
 def history_settings(request):
     form = HistorySettingsForm
     return render(request, 'Settings/history_settings.html', {'form': form})
+
+
+def search_view(request):
+    if request.method == 'POST':
+        srch = request.POST['srh']
+        if srch:
+            match = DeviceStatus.objects.filter(
+                Q(DeviceID__iexact=srch) | Q(AdministrativeRegion__iexact=srch) | Q(
+                    InstallationRoute__iexact=srch) | Q(InstallationLocation__iexact=srch))
+            if match:
+                messages.add_message(request, messages.SUCCESS, 'found some results!')
+                return render(request, 'Environmental/sensor_status.html', {'match': match})
+            else:
+                messages.add_message(request, messages.SUCCESS, 'no result found!')
+        else:
+            messages.add_message(request, messages.SUCCESS, 'not valid input')
+            return redirect('/envlist')
+    return redirect('/envlist')

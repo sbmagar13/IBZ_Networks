@@ -10,14 +10,8 @@ def validate_MAC(value):
         raise ValidationError(_("Not Valid MAC Address"))
     return value
 
-
-def validate_GPS(value):
-    pattern = re.compile("^([-+]?)([\d]{1,2})(((\.)(\d+)(,)))(\s*)(([-+]?)([\d]{1,3})((\.)(\d+))?)$")
-    if not pattern.match(value):
-        raise ValidationError(_("Not Valid GPS Coordinate"))
-    return value
-
-# def approver_KEY(value):
-# 	if value != 'ibz123':
-# 		raise ValidationError("Not valid KEY")
+# def validate_GPS(value):
+#     pattern = re.compile("^([-+]?)([\d]{1,2})(((\.)(\d+)(,)))(\s*)(([-+]?)([\d]{1,3})((\.)(\d+))?)$")
+#     if not pattern.match(value):
+#         raise ValidationError(_("Not Valid GPS Coordinate"))
 #     return value

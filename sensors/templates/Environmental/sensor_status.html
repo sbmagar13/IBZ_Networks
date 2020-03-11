@@ -7,8 +7,21 @@
     {% endfor %}
 {% endif %}
 <title>Environmental Sensor Devices Status</title>
-<div>
+<div class="row">
     <h4 class="col-md-offset-6">Enviromental Sensor Devices Status</h4>
+    <div class="col-lg-7">
+        <form action="{% url 'search_results' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="col-lg-4">
+                    <input type="text" name="srh" type="text" placeholder="Search...">
+                    <label class="col-sm-2">
+                        <button type="submit" class="btn btn-danger">Search</button>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
     <hr class="my-3">
 </div>
 <table class="table table-borderless">
@@ -21,7 +34,7 @@
             <td>Administrative Area</td>
             <td>Installation Route</td>
             <td>Installation Location</td>
-            <td>GPS Coordinate</td>
+            <td>GPS Coordinates</td>
             <td>Interlock</td>
             <td>Actions</td>
             <td>
@@ -41,7 +54,7 @@
                 <td>{{ device.AdministrativeRegion }}</td>
                 <td>{{ device.InstallationRoute }}</td>
                 <td>{{ device.InstallationLocation }}</td>
-                <td>{{ device.GPSCoordinates }}</td>
+                <td>{{ device.Long }}E, {{ device.Lat}}N</td>
                 <td>{{ device.InterlockDeviceInformation}}</td>
                 <td>
                     <a href="{% url 'sensor_update' device.id %}" class="btn text-secondary px-0">
@@ -58,7 +71,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body modal-content">
-                                    <form action="{% url 'sensor_delete' sid=device.id %}" method="post" autocomplete="off">
+                                    <form action="{% url 'sensor_delete' device.id %}" method="post" autocomplete="off">
                                         {% csrf_token %}
                                         {{ form2.as_p }}
                                         <div class = "col-md-4">

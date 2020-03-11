@@ -21,4 +21,6 @@ urlpatterns = [
 
     path('displaySettings', views.settings_window, name='display_settings'),
     path('historySettings', views.history_settings, name='history_settings'),
+
+    path('search/', views.search_view, name='search_results'),
 ]

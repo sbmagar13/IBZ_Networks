@@ -2,7 +2,7 @@ from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator
 from django.db import models
-from .validators import validate_MAC, validate_GPS
+from .validators import validate_MAC
 from multiselectfield import MultiSelectField
 from phone_field import PhoneField
 # from phonenumber_field.modelfields import PhoneNumberField
@@ -18,8 +18,10 @@ class DeviceStatus(models.Model):
                                             null=False)
     InstallationRoute = models.CharField(max_length=100, choices=[('a', 'A'), ('b', 'B')], null=False)
     InstallationLocation = models.CharField(max_length=100)
-    GPSCoordinates = models.CharField(validators=[validate_GPS], max_length=100,
-                                      default='10.141932, 10.371094')
+    # GPSCoordinates = models.CharField(validators=[validate_GPS], max_length=100,
+    #                                   default='10.141932, 10.371094')
+    Long = models.DecimalField(max_digits=8, decimal_places=3, null=True)
+    Lat = models.DecimalField(max_digits=8, decimal_places=3, null=True)
     InterlockDeviceInformation = models.CharField(max_length=100, default="None")
 
     def save(self, *args, **kwargs):
