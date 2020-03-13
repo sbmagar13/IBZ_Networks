@@ -14,7 +14,6 @@ step-1: Clone project
 step-2: Install Requirements
 
       >> pip install -r requirements.txt
-      e
 
 step-3: Run Program
 

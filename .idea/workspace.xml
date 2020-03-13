@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f100023-db6d-43a9-ba76-b9e0ae37b663" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sensors/tables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IBZ_Networks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IBZ_Networks/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Interlock/InterlockInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Interlock/InterlockInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Interlock/interlock_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Interlock/interlock_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Operator/operator_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Operator/operator_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Operator/operator_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Operator/operator_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Operator/operatorhandset_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Operator/operatorhandset_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Settings/display_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Settings/display_settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/sensor_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/sensor_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/views.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,8 +115,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="255">
-                <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+              <first_editor relative-caret-position="184">
+                <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
               </first_editor>
               <second_editor />
             </state>
@@ -387,12 +372,12 @@
       <workItem from="1583984743635" duration="16075000" />
       <workItem from="1584010589419" duration="4462000" />
       <workItem from="1584034807849" duration="1324000" />
-      <workItem from="1584074581058" duration="3559000" />
+      <workItem from="1584074581058" duration="4085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138874000" />
+    <option name="totallyTimeSpent" value="139400000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,7 +392,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24810892" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24810892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -421,7 +406,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22427036" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33179724" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -729,8 +714,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="255">
-            <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <first_editor relative-caret-position="184">
+            <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
           </first_editor>
           <second_editor />
         </state>
