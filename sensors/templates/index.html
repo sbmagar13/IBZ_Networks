@@ -8,60 +8,62 @@
 </div>
 <br>
  <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-">
             <a href="{% url 'sensor_insert' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i> Sensor Register
+                <i class="fas"></i> Sensor Register
             </a>
         </div>
         <div class="col-md-2">
             <a href="{% url 'operator_insert' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i> Portable Device Register
+                <i class="fas"></i> Portable Device Register
             </a>
         </div>
 
         <div class="col-md-2">
             <a href="{% url 'interlock_insert' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i> Interlocked Device Register
+                <i class="fas"></i> Interlocked Device Register
             </a>
         </div>
 
         <div class="col-md-2">
             <a href="{% url 'display_settings' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i> Screen settings
+                <i class="fas"></i> Screen settings
             </a>
         </div>
         <div class="col-md-2">
             <a href="{% url 'history_settings' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i> History settings
+                <i class="fas"></i> History settings
             </a>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-">
             <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i> Logo
+                <i class="fas"></i> Logo
             </a>
         </div>
     </div>
     <br>
+    <br>
     <div class="row">
-        <div class="col-md-2">
+        <div>
             <a href="{% url 'sensor_data' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i> Environmental Sensor Data
+                <i class="fas"></i>Sensor Data
             </a>
             <br>
             <br>
             <br>
             <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i> History
+                <i class="fas"></i> History
             </a>
             <br>
             <br>
             <br>
             <a href="{% url 'map' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i> Location
+                <i class="fas"></i> Location
             </a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 active" >
             {% block body %}
+
             {% endblock body %}
         </div>
     </div>

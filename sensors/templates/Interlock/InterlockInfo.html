@@ -14,16 +14,16 @@
     {{ form.as_p }}
    <div class="row">
         <div class="col-md-2">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Submit</button>
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Submit</button>
         </div>
-        <div class="col-md-2">
-            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i>Close
+        <div class="col-md-">
+            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-sm">
+                <i class="fas"></i>Close
             </a>
         </div>
-        <div class="col-md-4">
-            <a href="{% url 'interlock_list' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas fa-stream"></i>Back to list
+        <div class="col-md-2">
+            <a href="{% url 'interlock_list' %}" class="btn btn-secondary btn-block btn-sm">
+                <i class="fas"></i>Back to list
             </a>
         </div>
     </div>
@@ -32,7 +32,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Approver Window</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="   Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -41,7 +41,7 @@
                         {% csrf_token %}
                         {{ form2.as_p }}
                         <div class = "col-md-4">
-                            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>Submit</button>
+                            <button type="submit" class="btn btn-success btn-block btn-sm"><i class="fas fa-database"></i>Submit</button>
                         </div>
                     </form>
                 </div>

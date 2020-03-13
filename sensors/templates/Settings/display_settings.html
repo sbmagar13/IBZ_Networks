@@ -11,7 +11,7 @@
     <hr class="my-3">
 </div>
 {% block content %}
-    <form action="" method="post" autocomplete="off">
+    <form action="{% url 'sensor_data' %}" method="post" autocomplete="off">
         {% csrf_token %}
         <div class="row">
             {{form.as_p}}
@@ -26,6 +26,7 @@
                         </a>
                     </div>
                 </div>
+            </div>
         </div>
     </form>
 

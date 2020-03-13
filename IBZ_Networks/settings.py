@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'multiselectfield',
     'phone_field',
+    'table',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -6,6 +6,8 @@ from sensors.models import DeviceStatus, Operator, InterlockDevice, SensorData
 from django.contrib import messages
 from django.db.models import Q
 
+# from .tables import DeviceStatusTable
+
 
 def index(request):
     return render(request, 'index.html', {})
@@ -187,7 +189,14 @@ def operator_delete(request, oid):
 
 
 def settings_window(request):
-    form = SettingsWindowForm()
+    if request.method == 'POST':
+        form = SettingsWindowForm(request.POST)
+        if form.is_valid():
+            parameters = form.cleaned_data.get('parameters')
+            p_list = request.POST.getlist()
+            return render(request, 'Settings/sensor_data.html', {'form': form, 'p_list': p_list})
+    else:
+        form = SettingsWindowForm()
     return render(request, 'Settings/display_settings.html', {'form': form})
 
 
@@ -197,6 +206,8 @@ def history_settings(request):
 
 
 def sensor_data(request):
+    # data = DeviceStatus.objects.all()
+    # context = DeviceStatusTable(data)
     context = {'sensor_data': SensorData.objects.all()}
     return render(request, "sensor_data.html", context)
 

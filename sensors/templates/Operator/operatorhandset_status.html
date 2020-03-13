@@ -15,7 +15,7 @@
                 <div class="col-sm-">
                     <input name="srh" type="text" placeholder="Search...">
                     <label class="col-sm-1">
-                        <button type="submit" class="btn btn-danger">Search</button>
+                        <button type="submit" class="btn btn-danger btn-sm">Search</button>
                     </label>
                 </div>
             </div>
@@ -34,10 +34,19 @@
             <td>Manager Phone Number</td>
             <td>Department</td>
             <td>Final Approver</td>
+            <td>Actions</td>
             <td>
-                <a href="{% url 'operator_insert' %}" class="btn btn-outline-success">
-                    <i class="fas fa-plus"></i> Add New
-                </a>
+                <div class="col-md-">
+                    <a href="{% url 'operator_insert' %}" class="btn btn-outline-success btn-sm">
+                        <i class="fas fa-plus"></i> Add New
+                    </a>
+                </div>
+                <br>
+                <div class="col-md-">
+                    <a href="{% url '' %}" class="btn btn-secondary btn-block btn-sm">
+                        <i class="fas"></i>Close
+                    </a>
+                </div>
             </td>
         </tr>
     </thead>
@@ -53,9 +62,9 @@
                 <td>{{ operator.FinalApprover }}</td>
                 <td>
                     <a href="{% url 'operator_update' operator.id %}" class="btn text-secondary px-0">
-                        <i class="far fa-edit fa-lg">Edit</i>
+                        <i class="far fa-edit fa-sm">Edit</i>
                     </a>
-                    <button href="{% url 'operator_delete' operator.id %}" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#op{{ operator.id }}" data-whatever="@fat">Delete</button>
+                    <button href="{% url 'operator_delete' operator.id %}" type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#op{{ operator.id }}" data-whatever="@fat">Delete</button>
                     <div class="modal fade" id="op{{ operator.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -70,7 +79,7 @@
                                 {% csrf_token %}
                                 {{ form2.as_p }}
                                 <div class = "col-md-4">
-                                    <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>Submit</button>
+                                    <button type="submit" class="btn btn-success btn-block btn-sm"><i class="fas fa-database"></i>Submit</button>
                                 </div>
                             </form>
                           </div>
@@ -82,10 +91,6 @@
         {% endfor %}
     </tbody>
 </table>
-<div class="col-md-2">
-    <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
-        <i class="fas fa-stream"></i>Close
-    </a>
-</div>
+
 
 {% endblock content %}

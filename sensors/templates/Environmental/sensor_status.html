@@ -13,22 +13,21 @@
         <form name="myform" action="{% url 'sensor_search' %}" method="get">
             {% csrf_token %}
             <div class="form-group">
-                <div class="col-sm-">
+                <div class="col-md-8">
                     <input name="srh" type="text" placeholder="Search...">
-                    <label class="col-sm-1">
-                        <button type="submit" class="btn btn-danger">Search</button>
+                    <label class="col-md-2">
+                        <button type="submit" class="btn btn-danger btn-sm">Search</button>
                     </label>
                 </div>
             </div>
         </form>
     </div>
-
 </div>
 <hr class="my-1">
 <table class="table table-borderless">
     <thead class="border-bottom font-weight-bold">
         <tr>
-            <td>Device ID</td>
+            <td>ID</td>
             <td>IP</td>
             <td>Port</td>
             <td>MAC Address</td>
@@ -42,9 +41,15 @@
             <td>Interlock DeviceID4</td>
             <td>Actions</td>
             <td>
-                <a href="{% url 'sensor_insert' %}" class="btn btn-outline-success">
+                <a href="{% url 'sensor_insert' %}" class="btn btn-outline-success btn-sm">
                     <i class="fas fa-plus"></i>Add New
                 </a>
+                <br>
+                <div class="col-md-">
+                    <a href="{% url '' %}" class="btn btn-secondary btn-block btn-sm">
+                        <i class="fas"></i>Close
+                    </a>
+                </div>
             </td>
         </tr>
     </thead>
@@ -65,9 +70,9 @@
                 <td>{{ device.InterlockDeviceID4}}</td>
                 <td>
                     <a href="{% url 'sensor_update' device.id %}" class="btn text-secondary px-0">
-                        <i class="far fa-edit fa-lg">Edit</i>
+                        <i class="far fa-edit fa-sm">Edit</i>
                     </a>
-                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#dev{{ device.id }}" data-whatever="@fat">Delete</button>
+                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#dev{{ device.id }}" data-whatever="@fat">Delete</button>
                     <div class="modal fade" id="dev{{ device.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
@@ -95,9 +100,5 @@
         {% endfor %}
     </tbody>
 </table>
-<div class="col-md-2">
-    <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
-        <i class="fas fa-stream"></i>Close
-    </a>
-</div>
+
 {% endblock content %}

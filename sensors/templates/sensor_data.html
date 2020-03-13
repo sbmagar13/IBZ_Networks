@@ -1,57 +1,57 @@
 {% extends 'index.html' %}
 
 {% block body %}
- <div>
-          <table border="1" class="table table-bordered">
-             <thead class="border-bottom font-weight-bold">
-                <tr>
-                    <td>Device ID</td>
-                    <td>MAC</td>
-                    <td>Date</td>
-                    <td>Time</td>
-                    <td>Day</td>
-                    <td>Air </br>Temp.</td>
-                    <td>Humidity</td>
-                    <td>Air </br>Press.</td>
-                    <td>Accumulated</br> PPT.</td>
-                    <td>Dust</br> Conc.</td>
-                    <td>Radiation</br> Illu.</td>
-                    <td>Solar</br> Power</td>
-                    <td>Road</br>Temp.</td>
-                    <td>Noise</br> Level</td>
-                    <td>Acc_Xout</td>
-                    <td>Acc_Yout</td>
-                    <td>Acc_Zout</td>
-                    <td>GPS_N</td>
-                    <td>GPS_E</td>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in sensor_data %}
-                    <tr>
-                        <td>{{i.Did}}</td>
-                        <td>{{i.MAC_Address}}</td>
-                        <td>{{i.Date}}</td>
-                        <td>{{i.Time}}</td>
-                        <td>{{i.WeekDay}}</td>
-                        <td>{{i.Air_Temperature}}</td>
-                        <td>{{i.Humidity}}</td>
-                        <td>{{i.Air_Pressure}}</td>
-                        <td>{{i.Accumulated_PPT}}</td>
-                        <td>{{i.Dust_Concentration}}</td>
-                        <td>{{i.Radiation_Illuminance}}</td>
-                        <td>{{i.Solar_Radiation}}</td>
-                        <td>{{i.RoadSurface_Temperature}}</td>
-                        <td>{{i.Noise_Level}}</td>
-                        <td>{{i.Accelerometer_Xout}}</td>
-                        <td>{{i.Accelerometer_Yout}}</td>
-                        <td>{{i.Accelerometer_Zout}}</td>
-                        <td>{{i.GPS_Location_N}}</td>
-                        <td>{{i.GPS_Location_E}}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
 
-     </div>
+<div>
+    <table border="1" class="table table-bordered">
+        <thead class="border-bottom font-weight-bold">
+            <tr>
+                <td>Device ID</td>
+                <td>MAC</td>
+                <td>Date</td>
+                <td>Time</td>
+                <td>Day</td>
+                <td>Air </br>Temp.</td>
+                <td>Humidity</td>
+                <td>Air </br>Press.</td>
+                <td>Accumulated</br> PPT.</td>
+                <td>Dust</br> Conc.</td>
+                <td>Radiation</br> Illu.</td>
+                <td>Solar</br> Power</td>
+                <td>Road</br>Temp.</td>
+                <td>Noise</br> Level</td>
+                <td>Acc_Xout</td>
+                <td>Acc_Yout</td>
+                <td>Acc_Zout</td>
+                <td>GPS_N</td>
+                <td>GPS_E</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in sensor_data %}
+                <tr>
+                    <td>{{i.Did}}</td>
+                    <td>{{i.MAC_Address}}</td>
+                    <td>{{i.Date}}</td>
+                    <td>{{i.Time}}</td>
+                    <td>{{i.WeekDay}}</td>
+                    <td>{{i.Air_Temperature}}</td>
+                    <td>{{i.Humidity}}</td>
+                    <td>{{i.Air_Pressure}}</td>
+                    <td>{{i.Accumulated_PPT}}</td>
+                    <td>{{i.Dust_Concentration}}</td>
+                    <td>{{i.Radiation_Illuminance}}</td>
+                    <td>{{i.Solar_Radiation}}</td>
+                    <td>{{i.RoadSurface_Temperature}}</td>
+                    <td>{{i.Noise_Level}}</td>
+                    <td>{{i.Accelerometer_Xout}}</td>
+                    <td>{{i.Accelerometer_Yout}}</td>
+                    <td>{{i.Accelerometer_Zout}}</td>
+                    <td>{{i.GPS_Location_N}}</td>
+                    <td>{{i.GPS_Location_E}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock body %}
