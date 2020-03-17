@@ -1,9 +1,8 @@
 from django.urls import path
 from sensors import views
 
-
 urlpatterns = [
-    path('', views.index, name=''),
+    path('home/', views.index, name=''),
 
     path('sensor/', views.sensor_form, name='sensor_insert'),  # get and post req. for insert operation
     path('envupdate/<int:sid>/', views.sensor_form, name='sensor_update'),  # get and post req. for update operation
@@ -22,12 +21,19 @@ urlpatterns = [
 
     path('displaySettings/', views.settings_window, name='display_settings'),
     path('historySettings/', views.history_settings, name='history_settings'),
+    path('offsetSettings', views.offset_settings, name='offset_settings'),
 
-    path('sensordata/', views.sensor_data, name='sensor_data'),
+    path('', views.sensor_data, name='sensor_data'),
 
     path('sensor/search/', views.sensorsearch_view, name='sensor_search'),
     path('operator/search/', views.operatorsearch_view, name='operator_search'),
     path('interlock/search', views.interlocksearch_view, name='interlock_search'),
 
+    path('in-out/', views.in_out_window, name='in_out'),
     path('map/', views.map, name='map'),
+
+    path('seismograph/', views.SeismographOffset, name='seismograph'),
+    path('tempoffset/', views.TemperatureOffset, name='tempoffset'),
+    path('cumulitiveppt/', views.CumulativePPTOffset, name='CumulativePPTOffset'),
+    path('log/', views.Log, name='logoffset'),
 ]

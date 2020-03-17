@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Sensor OFFSET</h2>
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs group">
+        <li class="nav-item">
+            <a class = "nav-link" href="{% url 'seismograph' %}" >Seismograph</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'tempoffset' %}">Temperature</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'CumulativePPTOffset' %}">Cumulative Precipitation</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logoffset' %}">Log</a>
+        </li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+    {% block index %}
+    {% endblock index %}
+</div>
+{% endblock content %}

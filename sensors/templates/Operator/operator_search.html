@@ -1,16 +1,16 @@
 {% extends "base.html" %}
+
+{% block content %}
 {% if messages %}
     {% for message in messages %}
         <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
     {% endfor %}
 {% endif %}
-{% block content %}
 <title>Operator Handset Device Status</title>
 <div class="row">
     <h4 class="col-md-offset-4">Operator Handset Device Status</h4>
     <div class="col-lg-7">
         <form name="myform" action="{% url 'operator_search' %}" method="get">
-            {% csrf_token %}
             <div class="form-group">
                 <div class="col-sm-">
                     <input name="srh" type="text" placeholder="Search...">

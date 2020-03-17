@@ -10,7 +10,6 @@
     <h4 class="col-md-offset-4">Operator Handset Device Status</h4>
     <div class="col-lg-7">
         <form name="myform" action="{% url 'operator_search' %}" method="get">
-            {% csrf_token %}
             <div class="form-group">
                 <div class="col-sm-">
                     <input name="srh" type="text" placeholder="Search...">

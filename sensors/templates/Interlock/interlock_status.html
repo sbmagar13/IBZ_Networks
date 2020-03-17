@@ -10,7 +10,6 @@
     <h4 class="col-md-offset-4">Interlock Devices Status</h4>
     <div class="btn-sm-7">
         <form name="myform" action="{% url 'interlock_search' %}" method="get">
-            {% csrf_token %}
             <div class="form-group">
                 <div class="col-sm-">
                     <input name="srh" type="text" placeholder="Search...">

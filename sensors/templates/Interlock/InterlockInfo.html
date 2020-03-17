@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+
 {% if messages %}
     {% for message in messages %}
         <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
@@ -11,7 +13,7 @@
     <hr class="my-3">
 </div>
 <form method="POST" action="."> {%csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
    <div class="row">
         <div class="col-md-2">
             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Submit</button>

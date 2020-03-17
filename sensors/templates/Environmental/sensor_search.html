@@ -11,7 +11,6 @@
     <h4 class="col-md-offset-6">Enviromental Sensor Devices Status</h4>
     <div class="col-lg-7">
         <form name="myform" action="{% url 'sensor_search' %}" method="get">
-            {% csrf_token %}
             <div class="form-group">
                 <div class="col-lg-8">
                     <input type="text" name="srh" placeholder="Search...">

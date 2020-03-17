@@ -1,7 +1,8 @@
 from django import forms
 from django.forms import PasswordInput
 
-from sensors.models import DeviceStatus, Operator, InterlockDevice, SettingsWindow, HistorySettings
+from sensors.models import DeviceStatus, Operator, InterlockDevice, SettingsWindow, HistorySettings, in_out_Window, \
+    SensorData
 
 
 class DeviceStatusForm(forms.ModelForm):
@@ -42,7 +43,7 @@ class OperatorForm(forms.ModelForm):
         fields = ['PhoneNo', 'Password', 'confirmPassword', 'MacAddress', 'ManagerName', 'ManagerPhoneNo', 'Department',
                   'FinalApprover']
         labels = {'PhoneNo': 'Phone ID No.',
-                  'Password': 'New Password',
+                  'Password': 'Password',
                   'confirmPassword': 'Confirm Password',
                   'MacAddress': 'MAC Address',
                   'ManagerName': 'Manager Name',
@@ -70,3 +71,39 @@ class HistorySettingsForm(forms.ModelForm):
     class Meta:
         model = HistorySettings
         fields = '__all__'
+
+
+class In_Out_WindowForm(forms.ModelForm):
+    class Meta:
+        model = in_out_Window
+        fields = '__all__'
+        labels = {'Black_Ice_Appearance': 'Black Ice Appeareance',
+                  'Black_Ice_Appearance_Operator': 'Black Ice Appearance Operator',
+                  'Action_Status': 'Action Status',
+                  'InterlockDevice_ID': 'Interlock Device ID',
+                  'Action_Taken': 'Action Taken'
+                  }
+
+
+class OffsetLogForm(forms.Form):
+    log_cycle = forms.ChoiceField(choices=[("1 day", "One Day"), ("2 Weeks", "Two Weeks")])
+
+
+class AcclerometerOffsetForm(forms.ModelForm):
+    class Meta:
+        model = SensorData
+        fields = ['Accelerometer_Xout', 'Accelerometer_Yout', 'Accelerometer_Zout']
+
+
+class EarthQuakeOffsetForm(forms.Form):
+    EarthQuake_Xout = forms.FloatField()
+    EarthQuake_Yout = forms.FloatField()
+    EarthQuake_Zout = forms.FloatField()
+
+
+class TemperatureOffsetForm(forms.Form):
+    OFFSET = forms.FloatField()
+
+
+class CumulativePPTOffsetForm(forms.Form):
+    Reset = forms.BooleanField(required=False)

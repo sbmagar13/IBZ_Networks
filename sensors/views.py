@@ -1,16 +1,19 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from sensors.forms import DeviceStatusForm, OperatorForm, InterlockDeviceForm, ApproverForm, \
-    SettingsWindowForm, HistorySettingsForm  # , PopupForm
+    SettingsWindowForm, HistorySettingsForm, In_Out_WindowForm, OffsetLogForm, AcclerometerOffsetForm, \
+    EarthQuakeOffsetForm, TemperatureOffsetForm, CumulativePPTOffsetForm  # , PopupForm
 from sensors.models import DeviceStatus, Operator, InterlockDevice, SensorData
 from django.contrib import messages
 from django.db.models import Q
+
 
 # from .tables import DeviceStatusTable
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    username = request.user
+    return render(request, 'index.html', {'username': username})
 
 
 def sensor_list(request):
@@ -194,7 +197,7 @@ def settings_window(request):
         if form.is_valid():
             parameters = form.cleaned_data.get('parameters')
             p_list = request.POST.getlist()
-            return render(request, 'Settings/sensor_data.html', {'form': form, 'p_list': p_list})
+            return render(request, 'sensor_data.html', {'form': form, 'p_list': p_list})
     else:
         form = SettingsWindowForm()
     return render(request, 'Settings/display_settings.html', {'form': form})
@@ -274,3 +277,80 @@ def map(request):
                   {'mapbox_access_token': mapbox_access_token})
 
 
+def in_out_window(request):
+    form2 = ApproverForm()
+    objectlist = SensorData.objects.values('Did').distinct()
+    form = In_Out_WindowForm()
+    if request.method == "GET":
+        form = In_Out_WindowForm()
+        return render(request, 'Settings/in_out_window.html', {'form': form, 'objectlist': objectlist, 'form2': form2})
+    else:
+        form2 = ApproverForm(request.POST)
+        if form2.is_valid():
+            approver_key = form2.cleaned_data.get("Approver_Key")
+            fapprover_values = Operator.objects.values_list('FinalApprover', flat=True)
+            if (approver_key in fapprover_values) or (approver_key == 'ibz123'):
+                messages.add_message(request, messages.SUCCESS, 'Saved Successfully!')
+                return render(request, 'Settings/in_out_window.html',
+                              {'form': form, 'objectlist': objectlist, 'form2': form2})
+            else:
+                messages.add_message(request, messages.SUCCESS, 'Approver Key Mismatched!')
+                return redirect('/In-Out')
+        else:
+            messages.add_message(request, messages.SUCCESS, 'Invalid Approver Key!')
+            return redirect('/In-Out')
+
+
+def offset_settings(request):
+    objectlist = SensorData.objects.values('Did').distinct()
+    if request.method == "GET":
+        form = OffsetLogForm()
+        return render(request, 'Settings/offset_settings.html', {'form': form, 'objectlist': objectlist})
+    else:
+        return redirect('/offsetSettings')
+
+
+def SeismographOffset(request):
+    objectlist = SensorData.objects.values('Did').distinct()
+    id = request.POST.get('id')
+    form1 = EarthQuakeOffsetForm()
+    if request.method == 'GET':
+        form = AcclerometerOffsetForm()
+    else:
+        acc = SensorData.objects.filter(pk=id).values('Accelerometer_Xout', 'Accelerometer_Yout', 'Accelerometer_Zout')
+        form = AcclerometerOffsetForm(instance=acc)
+    context = {
+        'form': form,
+        'form1': form1,
+        'objectlist': objectlist,
+    }
+    return render(request, "Settings/OFFSET/seismograph.html", context)
+
+
+def TemperatureOffset(request):
+    objectlist = SensorData.objects.values('Did').distinct()
+    if request.method == 'GET':
+       form = TemperatureOffsetForm()
+    else:
+        acc = SensorData.objects.filter(pk=id).values('Air_Temperature')
+        form = TemperatureOffsetForm(instance=acc)
+    context = {
+        'form': form,
+        'objectlist': objectlist,
+    }
+    return render(request, "Settings/OFFSET/temperature.html", context)
+
+
+def CumulativePPTOffset(request):
+    objectlist = SensorData.objects.values('Did').distinct()
+    form = CumulativePPTOffsetForm()
+    return render(request, 'Settings/OFFSET/cumulativeppt.html', {'form': form, 'objectlist': objectlist}, )
+
+
+def Log(request):
+    objectlist = SensorData.objects.values('Did').distinct()
+    if request.method == "GET":
+        form = OffsetLogForm()
+        return render(request, 'Settings/OFFSET/offset_log.html', {'form': form, 'objectlist': objectlist})
+    else:
+        return redirect('/offsetSettings')

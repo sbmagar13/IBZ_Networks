@@ -5,12 +5,12 @@
         <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
     {% endfor %}
 {% endif %}
-<title>Display Settings</title>
 <div>
     <h4 class="col-md-offset-6">Display Settings</h4>
     <hr class="my-3">
 </div>
 {% block content %}
+<title>Display Settings</title>
     <form action="{% url 'sensor_data' %}" method="post" autocomplete="off">
         {% csrf_token %}
         <div class="row">

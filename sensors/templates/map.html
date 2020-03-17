@@ -1,12 +1,13 @@
 {% extends 'index.html' %}
 
 {% block body %}
-    <title>Interactive maps for Django web apps</title>
+
+    <title>Map</title>
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />
 
-    <div id='map' style='width: 950px; height: 300px;'></div>
+    <div id='map' style='width: 1000px; height: 350px;'></div>
     <script>
           mapboxgl.accessToken = 'pk.eyJ1Ijoic2JtYWdhciIsImEiOiJjazduM3h6Ymkwa2M3M2RxbWRneHNldGJvIn0.fTaLb7OfeK5pIpNroWH2IQ';
           var map = new mapboxgl.Map({

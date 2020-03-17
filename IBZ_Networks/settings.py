@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'multiselectfield',
     'phone_field',
-    'table',
+    'rest_framework',
+    'active_link',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -107,8 +108,16 @@ DATABASES = {
 }
 
 
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+]
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -144,3 +153,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'sensors/statics'),
+    ]
+

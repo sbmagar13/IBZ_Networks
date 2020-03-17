@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <title>IBZ Networks</title>
 <div>
-    <h1 class="display-8">IBZ Networks</h1>
+        {{ username }}
     <hr class="my-1">
 </div>
 <br>
@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-2">
             <a href="{% url 'operator_insert' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas"></i> Portable Device Register
+                <i class="fas"></i> Operator Register
             </a>
         </div>
 
@@ -35,20 +35,14 @@
                 <i class="fas"></i> History settings
             </a>
         </div>
-        <div class="col-md-">
-            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas"></i> Logo
-            </a>
-        </div>
     </div>
     <br>
     <br>
     <div class="row">
         <div>
             <a href="{% url 'sensor_data' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fas"></i>Sensor Data
+                <i class="fas"></i> Sensor Data
             </a>
-            <br>
             <br>
             <br>
             <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
@@ -56,12 +50,17 @@
             </a>
             <br>
             <br>
-            <br>
             <a href="{% url 'map' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas"></i> Location
             </a>
+            <br>
+            <br>
+            <a href="{% url 'in_out' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas"></i>Black Ice I/O
+            </a>
+
         </div>
-        <div class="col-md-6 active" >
+        <div class="col-md-10" >
             {% block body %}
 
             {% endblock body %}

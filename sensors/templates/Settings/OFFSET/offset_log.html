@@ -1,0 +1,46 @@
+{% extends "Settings/offset_settings.html" %}
+
+{% block index %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
+<title>Offset Log</title>
+<div>
+    <h4 class="col-md-offset-6">Environmental Sensor OFFSET Settings</h4>
+    <hr class="my-3">
+</div>
+
+ID: <label for="id_prefer_car_model"></label><select name="prefer_car_model" id="id_prefer_car_model" required="required">
+                <option value="0" selected disabled> Select Sensor ID </option>
+                {% for obj in objectlist %}
+                <option value="{{ obj.id }}">
+                   {{ obj.Did}}
+                </option>
+                {% endfor %}
+        </select>
+    <br>
+    <br>
+    <div><p style="font-style: oblique">- Log START/STOP</p></div>
+    <div class="col-md-6">
+         <button type="button" class="btn btn-primary btn-sm">Start</button>
+    </div>
+    <br>
+    <form action="" method="post" autocomplete="off">
+        {% csrf_token %}
+        {{form.as_p}}
+            <div class="row">
+                <div class="col-md-2">
+                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Save</button>
+                </div>
+                <div class="col-md-2">
+                    <a href="{% url '' %}" class="btn btn-secondary btn-block btn-sm">Cancel
+                    </a>
+                </div>
+            </div>
+    </form>
+
+{% endblock index %}
+

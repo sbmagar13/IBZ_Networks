@@ -1,0 +1,26 @@
+{% extends 'Settings/offset_settings.html' %}
+{% block index %}
+ID: <select name="prefer_car_model" id="id_prefer_car_model" required>
+                <option value="0" selected disabled> Select Sensor ID </option>
+                {% for obj in objectlist %}
+                <option value="{{ obj.id }}">
+                   {{ obj.Did}}
+                </option>
+                {% endfor %} <
+        </select>
+    <form action="" method="post" autocomplete="off">
+        {% csrf_token %}
+          {{form.as_p}}
+        <div class="row">
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-success btn-block btn-sm">
+                    Save</button>
+            </div>
+            <div class="col-md-1">
+                <a href="{% url '' %}" class="btn btn-secondary btn-block btn-sm">Cancel
+                </a>
+            </div>
+        </div>
+    </form>
+
+{% endblock index %}

@@ -1,0 +1,48 @@
+{% extends 'Settings/offset_settings.html' %}
+
+{% block index %}
+    <br>
+<div>
+    <form action="">
+        ID: <select name="id" id="id_prefer_car_model" required>
+            <option value="0" selected disabled> Select Sensor ID </option>
+            {% for obj in objectlist %}
+            <option value="{{ obj.id }}">
+               {{ obj.Did}}
+            </option>
+            {% endfor %}
+    </select>
+    </form>
+</div>
+    <br>
+<div style="font-weight: bold">
+    Average Normal Reference Value:
+</div>
+<div>
+    <form method="GET" action=".">
+        {%csrf_token %}
+    {{ form.as_p }}
+    </form>
+</div>
+<div style="font-weight: bold">
+    Average Normal Reference Value:
+</div>
+<div>
+    <form method="GET" action=".">
+        {%csrf_token %}
+    {{ form1.as_p }}
+    </form>
+</div>
+    <br>
+<div class="row">
+
+    <div class="col-md-1">
+        <button type="submit" class="btn btn-success btn-block btn-sm">
+            Save</button>
+    </div>
+    <div class="col-md-1">
+        <a href="{% url '' %}" class="btn btn-secondary btn-block btn-sm">Cancel </a>
+    </div>
+</div>
+
+{% endblock index%}

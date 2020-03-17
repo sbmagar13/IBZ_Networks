@@ -145,6 +145,17 @@ class SensorData(models.Model):
     GPS_Location_E = models.FloatField()
 
 
+BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
+
+
+class in_out_Window(models.Model):
+    Black_Ice_Appearance = models.BooleanField(choices=BOOL_CHOICES, default=False)
+    Black_Ice_Appearance_Operator = models.BooleanField(choices=BOOL_CHOICES, default=False)
+    Action_Status = models.BooleanField(choices=BOOL_CHOICES, default=False)
+    InterlockDevice_ID = models.CharField(max_length=100, choices=[('InterlockDevice_ID1', 'InterlockDevice_ID1'), ('InterlockDevice_ID2', 'InterlockDevice_ID2'),('InterlockDevice_ID3', 'InterlockDevice_ID3'), ('InterlockDevice_ID4', 'InterlockDevice_ID4')])
+    Action_Taken = models.TextField()
+
+
 # classoperator(models.Model):
 #     PhoneNo = models.CharField(validators=[MinLengthValidator(10)], max_length=20)
 #     password = models.CharField(validators=[MinLengthValidator(10)],max_length=100)

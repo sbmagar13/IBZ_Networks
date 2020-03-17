@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
+<title>Black Ice Apperance Input/Output Window</title>
+<div>
+    <h4 class="col-md-offset-6">Black Ice Apperance Input/Output Window</h4>
+    <hr class="my-3">
+</div>
+
+ID: <label for="id_prefer_car_model"></label><select name="prefer_car_model" id="id_prefer_car_model" required="required">
+                <option value="0" selected disabled> Select Sensor ID </option>
+                {% for obj in objectlist %}
+                <option value="{{ obj.id }}">
+                   {{ obj.Did}}
+                </option>
+                {% endfor %} <
+        </select>
+    <br>
+    <br>
+    <form action="" method="post" autocomplete="off">
+        {% csrf_token %}
+        {{form.Black_Ice_Appearance|as_crispy_field}}
+        {{form.Black_Ice_Appearance_Operator|as_crispy_field}}
+        {{form.Action_Status|as_crispy_field}}
+        {{form.InterlockDevice_ID|as_crispy_field}}
+        {{form.Action_Taken|as_crispy_field}}
+            <div class="row">
+                <div class="col-md-6">
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Save</button>
+                </div>
+                <div class="col-md-1">
+                    <a href="{% url '' %}" class="btn btn-secondary btn-block btn-sm">Cancel
+                    </a>
+                </div>
+            </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Approver Window</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+         {% csrf_token %}
+            {{ form2|crispy }}
+            <div class = "col-md-4">
+                <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>Save</button>
+            </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+    </form>
+
+{% endblock content %}
