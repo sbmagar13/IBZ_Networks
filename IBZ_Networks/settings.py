@@ -16,7 +16,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'sensors/templates')
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = '(oq=3kha0p&)ibk1m&$f9xxu&slom9e_i3g3i(*%uzrkx3v9z&'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -43,8 +41,10 @@ INSTALLED_APPS = [
     'bootstrap4',
     'multiselectfield',
     'phone_field',
-    'rest_framework',
-    'active_link',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'channels',
+    'channels_redis'
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -79,8 +79,36 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'IBZ_Networks.wsgi.application'
 
-MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+ASGI_APPLICATION = 'IBZ_Networks.routing.application'
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379), ],
+        }
+    }
+}
+
+# STATICFILES_FINDERS = [
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#     'django_plotly_dash.finders.DashAssetFinder',
+#     'django_plotly_dash.finders.DashComponentFinder'
+# ]
+
+PLOTLY_COMPONENTS = [
+
+    'dash_core_components',
+    'dash_html_components',
+    'dash_renderer',
+
+    'dpd_components'
+]
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -102,11 +130,10 @@ DATABASES = {
         'NAME': 'ibz_alt',
         'USER': 'root',
         'PASSWORD': 'Myagdi28273306',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
-
 
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
@@ -134,7 +161,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -148,13 +174,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/statics/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'sensors/statics'),
-    ]
-
+]

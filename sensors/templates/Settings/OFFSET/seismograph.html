@@ -1,21 +1,21 @@
 {% extends 'Settings/offset_settings.html' %}
 
 {% block index %}
-    <br>
+
+<title>Seismograph Offset</title>
 <div>
     <form action="">
-        ID: <select name="id" id="id_prefer_car_model" required>
+        ID: <select name="id" id="sensor_id" required>
             <option value="0" selected disabled> Select Sensor ID </option>
             {% for obj in objectlist %}
-            <option value="{{ obj.id }}">
+            <option value="{{ obj.Did }}">
                {{ obj.Did}}
             </option>
             {% endfor %}
     </select>
     </form>
 </div>
-    <br>
-<div style="font-weight: bold">
+<div>
     Average Normal Reference Value:
 </div>
 <div>
@@ -24,7 +24,7 @@
     {{ form.as_p }}
     </form>
 </div>
-<div style="font-weight: bold">
+<div>
     Average Normal Reference Value:
 </div>
 <div>
@@ -33,16 +33,39 @@
     {{ form1.as_p }}
     </form>
 </div>
-    <br>
 <div class="row">
 
     <div class="col-md-1">
         <button type="submit" class="btn btn-success btn-block btn-sm">
             Save</button>
     </div>
-    <div class="col-md-1">
-        <a href="{% url '' %}" class="btn btn-secondary btn-block btn-sm">Cancel </a>
+    <div class="col-md-">
+        <a href="{% url '' %}" class="btn btn-success btn-block btn-sm">Cancel </a>
     </div>
 </div>
 
 {% endblock index%}
+
+{% block customScripts %}
+<script>
+    var sensor_selector = $('#sensor_id');
+
+    sensor_selector.change(function () {
+        let sensor_id = sensor_selector.val();
+        console.log(sensor_id);
+        $.ajax({
+            url: "{% url 'getSeismographOffsetValueByDid' did=121 %}".replace('121',sensor_id.toString()),
+            type: "GET",
+            success: function (data) {
+                $('#id_Accelerometer_Xout').val(data.Accelerometer_Xout);
+                $('#id_Accelerometer_Yout').val(data.Accelerometer_Yout);
+                $('#id_Accelerometer_Zout').val(data.Accelerometer_Zout);
+            },
+            error: function (event) {
+                alert(event.statusText)
+
+            }
+        });
+    });
+</script>
+{% endblock customScripts%}

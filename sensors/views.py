@@ -1,5 +1,6 @@
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
+
 from sensors.forms import DeviceStatusForm, OperatorForm, InterlockDeviceForm, ApproverForm, \
     SettingsWindowForm, HistorySettingsForm, In_Out_WindowForm, OffsetLogForm, AcclerometerOffsetForm, \
     EarthQuakeOffsetForm, TemperatureOffsetForm, CumulativePPTOffsetForm  # , PopupForm
@@ -7,8 +8,8 @@ from sensors.models import DeviceStatus, Operator, InterlockDevice, SensorData
 from django.contrib import messages
 from django.db.models import Q
 
-
-# from .tables import DeviceStatusTable
+from plotly.offline import plot
+import plotly.graph_objects as go
 
 
 def index(request):
@@ -209,8 +210,6 @@ def history_settings(request):
 
 
 def sensor_data(request):
-    # data = DeviceStatus.objects.all()
-    # context = DeviceStatusTable(data)
     context = {'sensor_data': SensorData.objects.all()}
     return render(request, "sensor_data.html", context)
 
@@ -271,10 +270,20 @@ def interlocksearch_view(request):
     return redirect('/interlocklist')
 
 
-def map(request):
-    mapbox_access_token = 'pk.my_mapbox_access_token'
-    return render(request, 'map.html',
-                  {'mapbox_access_token': mapbox_access_token})
+
+
+def Map(request):
+    objectlist = SensorData.objects.values('Did').distinct()
+    return render(request, 'map.html', {'objectlist': objectlist})
+
+
+
+def getLocationDataByDid(request, did):
+    locationData = SensorData.objects.filter(Did=did).order_by('-id')[:1].values('GPS_Location_N','GPS_Location_E')
+    locationData_list = list(locationData)
+    if len(locationData_list):
+        return JsonResponse(locationData_list[0], safe=False, status=200)
+    return JsonResponse(locationData_list, safe=False, status=404)
 
 
 def in_out_window(request):
@@ -310,30 +319,41 @@ def offset_settings(request):
         return redirect('/offsetSettings')
 
 
+def seismographOffsetValueByDid(request, did):
+    acc = SensorData.objects.filter(Did=did).order_by('-id')[:1]\
+        .values('Accelerometer_Xout', 'Accelerometer_Yout', 'Accelerometer_Zout')
+    acc_list = list(acc)
+    if len(acc_list):
+        return JsonResponse(acc_list[0], safe=False, status=200)
+    return JsonResponse(acc_list, safe=False, status=404)
+
+
 def SeismographOffset(request):
+    global form1
     objectlist = SensorData.objects.values('Did').distinct()
-    id = request.POST.get('id')
-    form1 = EarthQuakeOffsetForm()
+    instance = request.POST.get('id')
     if request.method == 'GET':
         form = AcclerometerOffsetForm()
+        form1 = EarthQuakeOffsetForm()
     else:
-        acc = SensorData.objects.filter(pk=id).values('Accelerometer_Xout', 'Accelerometer_Yout', 'Accelerometer_Zout')
+        acc = SensorData.objects.filter(pk=instance).values('Accelerometer_Xout', 'Accelerometer_Yout',
+                                                            'Accelerometer_Zout')
         form = AcclerometerOffsetForm(instance=acc)
     context = {
         'form': form,
         'form1': form1,
         'objectlist': objectlist,
     }
-    return render(request, "Settings/OFFSET/seismograph.html", context)
+    return render(request, "Settings/OFFSET/Seismograph.html", context)
 
 
 def TemperatureOffset(request):
     objectlist = SensorData.objects.values('Did').distinct()
     if request.method == 'GET':
-       form = TemperatureOffsetForm()
+        form = TemperatureOffsetForm()
     else:
         acc = SensorData.objects.filter(pk=id).values('Air_Temperature')
-        form = TemperatureOffsetForm(instance=acc)
+        form = TemperatureOffsetForm(acc)
     context = {
         'form': form,
         'objectlist': objectlist,
@@ -354,3 +374,53 @@ def Log(request):
         return render(request, 'Settings/OFFSET/offset_log.html', {'form': form, 'objectlist': objectlist})
     else:
         return redirect('/offsetSettings')
+
+
+def Graph(request):
+    def scatter_bar():
+        trace = go.Scatter(
+            x=list(SensorData.objects.values_list('Date', flat=True)),
+            y=list(SensorData.objects.values_list('Air_Temperature', flat=True))
+        )
+        layout = dict(
+            title='Temperature Graph',
+            plot_bgcolor='rgba(0,0,0,0)',
+            xaxis=dict(
+                rangeselector=dict(
+                    buttons=list([
+                        dict(count=1,
+                             label="1m",
+                             step="month",
+                             stepmode="backward"),
+                        dict(count=6,
+                             label="6m",
+                             step="month",
+                             stepmode="backward"),
+                        dict(count=1,
+                             label="YTD",
+                             step="year",
+                             stepmode="todate"),
+                        dict(count=1,
+                             label="1y",
+                             step="year",
+                             stepmode="backward"),
+                        dict(step="all")
+                    ])
+                ),
+                rangeslider=dict(
+                    visible=True
+                ),
+                type="date"
+            ),
+        )
+
+        fig = go.Figure(data=[trace], layout=layout)
+        plot_div = plot(fig, output_type='div',
+                        config={'displaylogo': False}, include_plotlyjs=False)
+        return plot_div
+
+    context = {
+        'plot1': scatter_bar()
+    }
+
+    return render(request, 'graph1.html', context)

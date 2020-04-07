@@ -22,8 +22,24 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="jquery-3.3.1.slim" level="application" />
     <orderEntry type="library" name="popper" level="application" />
+    <orderEntry type="library" name="buttons.flash" level="application" />
+    <orderEntry type="library" name="jszip" level="application" />
+    <orderEntry type="library" name="pdfmake" level="application" />
+    <orderEntry type="library" name="buttons.html5" level="application" />
+    <orderEntry type="library" name="vfs_fonts" level="application" />
+    <orderEntry type="library" name="buttons.print" level="application" />
+    <orderEntry type="library" name="mapbox-gl" level="application" />
+    <orderEntry type="library" name="plotly-latest" level="application" />
+  </component>
+  <component name="PyDocumentationSettings">
+    <option name="renderExternalDocumentation" value="true" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/sensors/templates" />
+      </list>
+    </option>
   </component>
 </module>

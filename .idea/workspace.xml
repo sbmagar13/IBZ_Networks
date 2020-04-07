@@ -2,33 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f100023-db6d-43a9-ba76-b9e0ae37b663" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sensors/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/cumulativeppt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/offset_log.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/seismograph.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/temperature.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sensors/templates/Settings/in_out_window.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IBZ_Networks/routing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sensors/dash_apps/finished_apps/graph1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sensors/templates/Settings/graph.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sensors/templates/graph1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/IBZ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IBZ.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IBZ_Networks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IBZ_Networks/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IBZ_Networks/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/IBZ_Networks/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensors/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensors/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensors/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/tables.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Environmental/sensor_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Interlock/InterlockInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Interlock/InterlockInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Interlock/interlock_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Interlock/interlock_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Interlock/interlock_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Interlock/interlock_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Operator/operator_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Operator/operator_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Operator/operator_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Operator/operator_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Operator/operatorhandset_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Operator/operatorhandset_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Settings/display_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Settings/display_settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors/templates/Settings/history_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Settings/history_settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensors/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/offset_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/offset_log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/seismograph.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/seismograph.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensors/templates/Settings/offset_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/Settings/offset_settings.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensors/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensors/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sensors/templates/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/sensors/templates/map.html" afterDir="false" />
@@ -54,8 +47,16 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
     <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="IBZ" />
@@ -63,22 +64,53 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sensors/urls.py">
+        <entry file="file://$PROJECT_DIR$/sensors/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+            <state relative-caret-position="330">
+              <caret line="346" selection-start-line="346" selection-end-line="346" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#58#0" expanded="true" />
+                <element signature="e#11200#11934#0" />
+                <element signature="e#12146#13300#0" />
+                <element signature="e#13337#13615#0" />
+                <element signature="e#14337#14739#0" />
+                <element signature="e#14780#14982#0" />
+                <element signature="e#15007#15287#0" />
+                <element signature="e#15314#16943#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/in_out_window.html">
+        <entry file="file://$PROJECT_DIR$/sensors/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="308">
+              <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sensors/dash_apps/finished_apps/graph1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sensors/templates/graph1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -86,60 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sensors/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-510">
-              <caret column="25" selection-start-column="25" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sensors/apps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sensors/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/offset_settings.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/OFFSET/seismograph.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-              <folding>
-                <element signature="e#428#453#0#HTML" expanded="true" />
-                <element signature="e#607#632#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IBZ_Networks/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-              <folding>
-                <element signature="e#627#659#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="410">
+              <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -147,20 +127,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sensors/templates/sensor_data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="52" />
+            <state relative-caret-position="-357">
+              <caret line="18" column="72" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="72" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sensors/views.py">
+        <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/offset_settings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="317" column="39" selection-start-line="317" selection-start-column="39" selection-end-line="317" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="359">
+              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/OFFSET/seismograph.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sensors/templates/map.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="26" column="42" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sensors/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -170,9 +174,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -184,6 +188,12 @@
       <find>forms</find>
       <find>fa-stream</find>
       <find>lg</find>
+      <find>df.</find>
+      <find>df</find>
+      <find>New York City</find>
+      <find>Cities</find>
+      <find>Country</find>
+      <find>example-graph</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,23 +202,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sensorreg/urls.py" />
-        <option value="$PROJECT_DIR$/sensorreg/models.py" />
-        <option value="$PROJECT_DIR$/sensorreg/templates/index.html" />
-        <option value="$PROJECT_DIR$/sensorreg/templates/Settings/history_settings.html" />
-        <option value="$PROJECT_DIR$/sensorreg/views.py" />
-        <option value="$PROJECT_DIR$/sensorreg/templates/Environmental/sensor_status.html" />
-        <option value="$PROJECT_DIR$/sensorreg/validators.py" />
-        <option value="$PROJECT_DIR$/Sensors/forms.py" />
-        <option value="$PROJECT_DIR$/Sensors/apps.py" />
-        <option value="$PROJECT_DIR$/IBZ_Networks/wsgi.py" />
-        <option value="$PROJECT_DIR$/IBZ_Networks/asgi.py" />
-        <option value="$PROJECT_DIR$/sensors/admin.py" />
-        <option value="$PROJECT_DIR$/sensors/templates/js/confirmdelete.js" />
         <option value="$PROJECT_DIR$/sensors/validators.py" />
         <option value="$PROJECT_DIR$/sensors/templates/Environmental/search_results.html" />
         <option value="$PROJECT_DIR$/sensors/templates/Environmental/sensor_register.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/sensors/serializers.py" />
         <option value="$PROJECT_DIR$/sensors/templates/Environmental/sensor_status.html" />
         <option value="$PROJECT_DIR$/sensors/templates/Operator/operatorhandset_status.html" />
@@ -225,31 +221,46 @@
         <option value="$PROJECT_DIR$/sensors/templates/Interlock/InterlockInfo.html" />
         <option value="$PROJECT_DIR$/sensors/templates/Operator/operator_register.html" />
         <option value="$PROJECT_DIR$/sensors/templates/Settings/display_settings.html" />
-        <option value="$PROJECT_DIR$/sensors/templates/map.html" />
         <option value="$PROJECT_DIR$/sensors/templates/Settings/history_settings.html" />
-        <option value="$PROJECT_DIR$/sensors/models.py" />
         <option value="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/temperature.html" />
-        <option value="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/offset_log.html" />
         <option value="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/cumulativeppt.html" />
         <option value="$PROJECT_DIR$/sensors/forms.py" />
-        <option value="$PROJECT_DIR$/sensors/templates/Settings/offset_settings.html" />
+        <option value="$PROJECT_DIR$/sensors/templates/Settings/in_out_window.html" />
+        <option value="$PROJECT_DIR$/sensors/templates/sensor_data.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/sensors/templates/Settings/graph.html" />
+        <option value="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/offset_log.html" />
+        <option value="$PROJECT_DIR$/sensors/models.py" />
+        <option value="$PROJECT_DIR$/sensors/admin.py" />
+        <option value="$PROJECT_DIR$/IBZ_Networks/views.py" />
+        <option value="$PROJECT_DIR$/sensors/dash-app.py" />
+        <option value="$PROJECT_DIR$/sensors/apps.py" />
+        <option value="$PROJECT_DIR$/sensors/templates/Settings/dashGraph.html" />
+        <option value="$PROJECT_DIR$/sensors/dash_app.py" />
+        <option value="$PROJECT_DIR$/sensors/scaffold.py" />
+        <option value="$PROJECT_DIR$/sensors/routing.py" />
+        <option value="$PROJECT_DIR$/sensors/templates/Settings/dash-graph.html" />
+        <option value="$PROJECT_DIR$/sensors/dash_graph.py" />
         <option value="$PROJECT_DIR$/IBZ_Networks/urls.py" />
         <option value="$PROJECT_DIR$/IBZ_Networks/settings.py" />
-        <option value="$PROJECT_DIR$/sensors/templates/sensor_data.html" />
-        <option value="$PROJECT_DIR$/sensors/apps.py" />
-        <option value="$PROJECT_DIR$/sensors/templates/index.html" />
+        <option value="$PROJECT_DIR$/IBZ_Networks/routing.py" />
+        <option value="$PROJECT_DIR$/sensors/templates/graph1.html" />
+        <option value="$PROJECT_DIR$/sensors/dash_apps/finished_apps/graph1.py" />
         <option value="$PROJECT_DIR$/sensors/templates/base.html" />
-        <option value="$PROJECT_DIR$/sensors/urls.py" />
-        <option value="$PROJECT_DIR$/sensors/templates/Settings/in_out_window.html" />
-        <option value="$PROJECT_DIR$/sensors/views.py" />
+        <option value="$PROJECT_DIR$/sensors/templates/index.html" />
+        <option value="$PROJECT_DIR$/sensors/templates/Settings/offset_settings.html" />
         <option value="$PROJECT_DIR$/sensors/templates/Settings/OFFSET/seismograph.html" />
+        <option value="$PROJECT_DIR$/sensors/templates/map.html" />
+        <option value="$PROJECT_DIR$/sensors/urls.py" />
+        <option value="$PROJECT_DIR$/sensors/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="645" />
+    <option name="x" value="351" />
+    <option name="y" value="128" />
     <option name="width" value="728" />
-    <option name="height" value="775" />
+    <option name="height" value="396" />
   </component>
   <component name="ProjectId" id="1Xmcw9BerAtWjE4LPLn4guXrgtr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -260,6 +271,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,6 +288,19 @@
               <item name="IBZ_Networks" type="b2602c69:ProjectViewProjectNode" />
               <item name="IBZ_Networks" type="462c0819:PsiDirectoryNode" />
               <item name="sensors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IBZ_Networks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IBZ_Networks" type="462c0819:PsiDirectoryNode" />
+              <item name="sensors" type="462c0819:PsiDirectoryNode" />
+              <item name="dash_apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IBZ_Networks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IBZ_Networks" type="462c0819:PsiDirectoryNode" />
+              <item name="sensors" type="462c0819:PsiDirectoryNode" />
+              <item name="dash_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="finished_apps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IBZ_Networks" type="b2602c69:ProjectViewProjectNode" />
@@ -302,7 +327,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -325,7 +349,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -346,6 +370,28 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="IBZ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IBZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -409,12 +455,29 @@
       <workItem from="1584419836994" duration="533000" />
       <workItem from="1584421196261" duration="893000" />
       <workItem from="1584422571492" duration="8567000" />
-      <workItem from="1584434768283" duration="2748000" />
+      <workItem from="1584434768283" duration="11403000" />
+      <workItem from="1584470422639" duration="954000" />
+      <workItem from="1584502786357" duration="19901000" />
+      <workItem from="1584591676747" duration="3563000" />
+      <workItem from="1584615512208" duration="3423000" />
+      <workItem from="1584675937192" duration="5846000" />
+      <workItem from="1584681952887" duration="2737000" />
+      <workItem from="1584691367312" duration="5656000" />
+      <workItem from="1584764797467" duration="3198000" />
+      <workItem from="1585541438878" duration="5063000" />
+      <workItem from="1585552977677" duration="2662000" />
+      <workItem from="1585631082012" duration="3131000" />
+      <workItem from="1585720658785" duration="9831000" />
+      <workItem from="1585745299334" duration="4840000" />
+      <workItem from="1585801034242" duration="6982000" />
+      <workItem from="1585902465948" duration="5431000" />
+      <workItem from="1586152060289" duration="7251000" />
+      <workItem from="1586240304903" duration="11080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182270000" />
+    <option name="totallyTimeSpent" value="292474000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,7 +492,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19515885" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21255673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -443,37 +506,15 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.24270353" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21812595" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.18691589" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="4" sideWeight="0.49886104" weight="0.32980332" />
+      <window_info anchor="right" x="0" y="0" width="295" height="584" id="Documentation" order="5" sideWeight="0.5011389" side_tool="true" visible="true" weight="0.06505295" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25189108" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32872504" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32872504" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.24270353" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -500,137 +541,21 @@
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" />
     <state x="581" y="298" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sensors/views.py</url>
+          <line>346</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sensorreg/validators.py" />
-    <entry file="file://$PROJECT_DIR$/sensorreg/templates/Environmental/sensor_status.html" />
-    <entry file="file://$PROJECT_DIR$/sensorreg/templates/Operator/operatorhandset_status.html" />
-    <entry file="file://$PROJECT_DIR$/sensorreg/urls.py" />
-    <entry file="file://$PROJECT_DIR$/sensors/templates/js/confirmdelete.js" />
-    <entry file="file://$PROJECT_DIR$/IBZ_Networks/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#219#228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IBZ_Networks/asgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IBZ_Networks/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Environmental/search_results.html" />
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="323">
-            <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/validators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Environmental/sensor_status.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Interlock/interlock_status.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="79" selection-start-line="11" selection-start-column="79" selection-end-line="11" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Interlock/interlock_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="79" selection-start-line="11" selection-start-column="79" selection-end-line="11" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/tables.py" />
-    <entry file="file://$PROJECT_DIR$/sensors/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Operator/operatorhandset_status.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="78" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/statics/dynamic_table.css" />
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/dynamic_table.html" />
     <entry file="file://$PROJECT_DIR$/sensors/statics/js/dynamic_tb.js" />
     <entry file="file://$PROJECT_DIR$/sensors/templates/dynamic_tb.html" />
     <entry file="file://$PROJECT_DIR$/sensors/statics/css/dynamic_tb.css" />
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Environmental/sensor_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Environmental/sensor_register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Operator/operator_register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/display_settings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -642,23 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-425">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#361#398#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Operator/operator_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -690,26 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/OFFSET/offset_log.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sensors/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1513">
@@ -720,19 +608,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IBZ_Networks/settings.py">
+    <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/in_out_window.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        <state relative-caret-position="408">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IBZ_Networks/urls.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="221">
+            <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json" />
+    <entry file="file://$PROJECT_DIR$/sensors/serializers.py" />
+    <entry file="file://$PROJECT_DIR$/sensors/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        <state relative-caret-position="4216">
+          <caret line="248" column="16" selection-start-line="248" selection-start-column="16" selection-end-line="248" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/OFFSET/offset_log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding>
-            <element signature="e#627#659#0" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IBZ_Networks/views.py" />
+    <entry file="file://$PROJECT_DIR$/sensors/dash-app.py" />
+    <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/dashGraph.html" />
+    <entry file="file://$PROJECT_DIR$/sensors/dash_app.py" />
+    <entry file="file://$PROJECT_DIR$/sensors/routing.py" />
+    <entry file="file://$PROJECT_DIR$/sensors/scaffold.py" />
+    <entry file="file://$PROJECT_DIR$/sensors/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -744,69 +673,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/sensors/templates/Operator/operator_register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state relative-caret-position="765">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/urls.py">
+    <entry file="file://$PROJECT_DIR$/sensors/templates/Operator/operator_search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        <state relative-caret-position="119">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/migrations/0002_in_out_window.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IBZ_Networks/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/validators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/in_out_window.html">
+    <entry file="file://$PROJECT_DIR$/sensors/dash_graph.py" />
+    <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/dash-graph.html" />
+    <entry file="file://$PROJECT_DIR$/sensors/templates/Environmental/sensor_register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        <state relative-caret-position="357">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/templates/Environmental/sensor_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/graph.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IBZ_Networks/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="68" />
+          <folding>
+            <element signature="e#627#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IBZ_Networks/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="92" selection-start-line="92" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IBZ_Networks/asgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IBZ_Networks/routing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2006">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/dash_apps/finished_apps/graph1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sensors/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sensors/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="317" column="39" selection-start-line="317" selection-start-column="39" selection-end-line="317" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="410">
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sensors/templates/sensor_data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="52" />
+        <state relative-caret-position="-357">
+          <caret line="18" column="72" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/templates/graph1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/offset_settings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="359">
+          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/templates/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="346" selection-start-line="346" selection-end-line="346" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#11200#11934#0" />
+            <element signature="e#12146#13300#0" />
+            <element signature="e#13337#13615#0" />
+            <element signature="e#14337#14739#0" />
+            <element signature="e#14780#14982#0" />
+            <element signature="e#15007#15287#0" />
+            <element signature="e#15314#16943#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sensors/templates/Settings/OFFSET/seismograph.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-          <folding>
-            <element signature="e#428#453#0#HTML" expanded="true" />
-            <element signature="e#607#632#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="986">
+          <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
         </state>
       </provider>
     </entry>

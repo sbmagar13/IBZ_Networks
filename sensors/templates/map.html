@@ -2,20 +2,70 @@
 
 {% block body %}
 
-    <title>Map</title>
+<title>Interactive maps for Django web apps</title>
+<!--    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=d90gn8biky"></script>-->
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ut7gvaqd2o"></script>
+<!--    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>-->
+<!--    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />-->
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />
+<diV>
+    <form action="">
+        ID: <select name="id" id="sensor_id" required>
+        {% for obj in objectlist %}
+        <option id='sensorid' value="{{ obj.Did }}">
+            {{ obj.Did}}
+        </option>
+        {% endfor %}
+    </select>
+    </form>
+    <div id='map' style='width: 100%; height: 560px;'></div>
+</diV>
 
-    <div id='map' style='width: 1000px; height: 350px;'></div>
-    <script>
-          mapboxgl.accessToken = 'pk.eyJ1Ijoic2JtYWdhciIsImEiOiJjazduM3h6Ymkwa2M3M2RxbWRneHNldGJvIn0.fTaLb7OfeK5pIpNroWH2IQ';
-          var map = new mapboxgl.Map({
-              container: 'map',
-              style: 'mapbox://styles/mapbox/satellite-streets-v10',
-              center: [126.9780, 37.5665],
-              zoom: 12,
-          });
-          map.addControl(new mapboxgl.NavigationControl());
-    </script>
 {% endblock body %}
+{% block customScripts %}
+<script>
+    var sensor_selector = $('#sensor_id');
+    sensor_selector.change(function () {
+        let sensor_id = sensor_selector.val();
+        $.ajax({
+            url: "{% url 'getLocationDataById' did=0 %}".replace('0',sensor_id.toString()),
+            type: "GET",
+            success: function (data) {
+                setMap({lat: data.GPS_Location_N, lng: data.GPS_Location_E});
+            },
+            error: function (event) {
+                alert(event.statusText)
+
+            }
+        });
+    });
+
+    function setMap(mapData) {
+        if(!!mapData.lat == false || !!mapData.lng == false){
+            alert('Invalid latitude and longitude ');
+            return 0;
+        }
+       // var sensor = new naver.maps.LatLng(37.3595704, 127.105399);
+
+        var sensor = new naver.maps.LatLng(mapData.lat, mapData.lng),
+            map = new naver.maps.Map('map', {
+                center: sensor,
+                zoom: 15,
+                minZoom: 7,
+                scaleControl: false,
+                logoControl: false,
+                mapDataControl: false,
+                zoomControl: true,
+                zoomControlOptions: {
+                    position: naver.maps.Position.TOP_RIGHT
+                }
+            }),
+            marker = new naver.maps.Marker({
+                map: map,
+                position: sensor
+            });
+        map.setOptions("mapTypeControl", true);
+    }
+</script>
+{% endblock customScripts %}
+

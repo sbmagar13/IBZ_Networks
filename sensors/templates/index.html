@@ -3,7 +3,7 @@
 {% block content %}
 <title>IBZ Networks</title>
 <div>
-        {{ username }}
+    {{ username }}
     <hr class="my-1">
 </div>
 <br>
@@ -35,6 +35,11 @@
                 <i class="fas"></i> History settings
             </a>
         </div>
+        <div class="col-md-2">
+            <a href="{% url 'offset_settings' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas"></i> Offset Settings
+            </a>
+        </div>
     </div>
     <br>
     <br>
@@ -45,7 +50,7 @@
             </a>
             <br>
             <br>
-            <a href="{% url '' %}" class="btn btn-secondary btn-block btn-lg">
+            <a href="{% url 'graph' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas"></i> History
             </a>
             <br>
@@ -67,3 +72,6 @@
         </div>
     </div>
  {% endblock content %}
+
+ {% block customScripts %}
+  {% endblock customScripts %}

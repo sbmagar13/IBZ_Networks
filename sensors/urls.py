@@ -1,5 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from sensors import views
+from sensors.dash_apps.finished_apps import graph1
+
 
 urlpatterns = [
     path('home/', views.index, name=''),
@@ -30,10 +32,16 @@ urlpatterns = [
     path('interlock/search', views.interlocksearch_view, name='interlock_search'),
 
     path('in-out/', views.in_out_window, name='in_out'),
-    path('map/', views.map, name='map'),
+    path('map/', views.Map, name='map'),
+    path('map/<int:did>/', views.getLocationDataByDid, name='getLocationDataById'),
 
     path('seismograph/', views.SeismographOffset, name='seismograph'),
+    path('seismograph/<int:did>/', views.seismographOffsetValueByDid, name='getSeismographOffsetValueByDid'),
     path('tempoffset/', views.TemperatureOffset, name='tempoffset'),
     path('cumulitiveppt/', views.CumulativePPTOffset, name='CumulativePPTOffset'),
     path('log/', views.Log, name='logoffset'),
+
+    path('graph/', views.Graph, name='graph'),
+
+
 ]

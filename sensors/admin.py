@@ -5,5 +5,4 @@ from sensors.models import *
 admin.site.register(DeviceStatus)
 admin.site.register(Operator)
 admin.site.register(InterlockDevice)
-admin.site.register(SettingsWindow)
-
+admin.site.register(SensorData)

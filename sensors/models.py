@@ -116,7 +116,7 @@ class HistorySettings(models.Model):
         ('Scatter_graph', 'Scatter_graph'),
     )
 
-    Item_List = MultiSelectField(choices= Item_list)
+    Item_List = MultiSelectField(choices=Item_list)
     Graph_Setting = MultiSelectField(choices=Graph)
     Save = models.CharField(max_length=100, choices=[('6_months', '6_months'), ('1_year', '1_year')])
     Delete = models.CharField(max_length=100, choices=[('6_months', '6_months'), ('1_year', '1_year')])
@@ -152,25 +152,8 @@ class in_out_Window(models.Model):
     Black_Ice_Appearance = models.BooleanField(choices=BOOL_CHOICES, default=False)
     Black_Ice_Appearance_Operator = models.BooleanField(choices=BOOL_CHOICES, default=False)
     Action_Status = models.BooleanField(choices=BOOL_CHOICES, default=False)
-    InterlockDevice_ID = models.CharField(max_length=100, choices=[('InterlockDevice_ID1', 'InterlockDevice_ID1'), ('InterlockDevice_ID2', 'InterlockDevice_ID2'),('InterlockDevice_ID3', 'InterlockDevice_ID3'), ('InterlockDevice_ID4', 'InterlockDevice_ID4')])
+    InterlockDevice_ID = models.CharField(max_length=100, choices=[('InterlockDevice_ID1', 'InterlockDevice_ID1'),
+                                                                   ('InterlockDevice_ID2', 'InterlockDevice_ID2'),
+                                                                   ('InterlockDevice_ID3', 'InterlockDevice_ID3'),
+                                                                   ('InterlockDevice_ID4', 'InterlockDevice_ID4')])
     Action_Taken = models.TextField()
-
-
-# classoperator(models.Model):
-#     PhoneNo = models.CharField(validators=[MinLengthValidator(10)], max_length=20)
-#     password = models.CharField(validators=[MinLengthValidator(10)],max_length=100)
-#     confirmPassword = models.CharField(max_length=100)
-#     MacAddress = models.CharField(validators=[validate_MAC], max_length=100, default='AA:BB:CC:DD:EE:FF')
-#     ManagerName = models.CharField(max_length=100)
-#     ManagerPhoneNo = models.CharField(validators=[MinLengthValidator(10)], max_length=20)
-#     Department = models.CharField(max_length=100)
-#     FinalApprover = models.CharField(max_length=100)
-#
-#     def clean(self):
-#         if self.password != self.confirmPassword:
-#             raise ValidationError('Passwords are not equal')
-#         password_validation.validate_password(self.password, None)
-#         return self.password
-#
-# def __str__(self): return self.PhoneNo, self.password, self.confirmPassword, self.MacAddress, self.ManagerName,
-# self.ManagerPhoneNo, self.Department, self.FinalApprover

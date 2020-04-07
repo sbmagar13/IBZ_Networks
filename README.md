@@ -11,7 +11,7 @@ step-1: Clone project
 
       >> git clone https://github.com/SBMagar/IBZ_Networks.git
 
-step-2: Install Requirements
+step-2: Install Requirements(inside project directory)
 
       >> pip install -r requirements.txt
 

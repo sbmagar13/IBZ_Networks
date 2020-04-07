@@ -5,5 +5,5 @@ class SensorsConfig(AppConfig):
     name = 'sensors'
 
 
-class ActiveLinkConfig(AppConfig):
-    name = 'active_link'
+class DjangoPlotlyDashConfig(AppConfig):
+    name = 'django_plotly_dash'
